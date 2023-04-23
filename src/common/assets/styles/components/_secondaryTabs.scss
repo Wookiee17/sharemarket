@@ -1,0 +1,113 @@
+.secondary_tabs {
+  @include flexStartRow();
+  box-shadow: $shadow-general;
+
+  &-item {
+    font-size: $fontsize-default;
+    font-weight: 400;
+    color: $dark-text-primary;
+    background-color: $secondary-light;
+    @include flexCenter(row);
+    padding: 0px 0rem;
+    height: 1.5rem;
+    flex: 1;
+    cursor: pointer;
+    margin: 0px 0rem;
+    position: relative;
+    border: $border-width-type1;
+    // border-top: 0px solid $transparent;
+    // border-radius: 2px;
+    // -webkit-border-radius: 2px;
+    // -moz-border-radius: 2px;
+    // -ms-border-radius: 2px;
+    // -o-border-radius: 2px;
+
+    &.focused {
+      background-color: $blue-300 !important;
+      box-shadow: $shadow-general;
+      color: $light-text-primary !important;
+      border: $border-width-general !important;
+      border-top: 0px solid $transparent !important;
+
+      &:hover {
+        color: $light-text-primary;
+      }
+
+      // &::after {
+      //   content: "";
+      //   display: block;
+      //   width: 10px;
+      //   height: 10px;
+      //   background-color: $senary-dark;
+      //   position: absolute;
+      //   bottom: -0.5rem;
+      //   transform: rotate(45deg);
+      //   -webkit-transform: rotate(45deg);
+      //   -moz-transform: rotate(45deg);
+      //   -ms-transform: rotate(45deg);
+      //   -o-transform: rotate(45deg);
+      // }
+    }
+
+    &:hover {
+      background-color: $yellow-trans;
+      box-shadow: $shadow-general;
+      color: $dark-text-primary;
+      border: $border-width-type3;
+    }
+
+    &:first-child {
+      border-radius: 2px 0px 0px 2px;
+    }
+
+    &:last-child {
+      border-radius: 0px 2px 2px 0px;
+    }
+  }
+
+  &.dark {
+    .secondary_tabs-item {
+      color: $light-text-primary;
+      background-color: $quinary-dark;
+      margin: 0px 0rem;
+      position: relative;
+      border: $border-width-general;
+      // border: 0.25px solid #D9D9D9;
+      // border-top: 0px solid $transparent;
+
+      &.focused {
+        background-color: $blue-300 !important;
+        box-shadow: $shadow-general;
+        color: $light-text-primary !important;
+        border: $border-width-general !important;
+        border-top: 0px solid $transparent !important;
+
+        &:hover {
+          color: $light-text-primary;
+        }
+
+        // &::after {
+        //   content: "";
+        //   display: block;
+        //   width: 10px;
+        //   height: 10px;
+        //   background-color: $blue-300;
+        //   position: absolute;
+        //   bottom: -0.5rem;
+        //   transform: rotate(45deg);
+        //   -webkit-transform: rotate(45deg);
+        //   -moz-transform: rotate(45deg);
+        //   -ms-transform: rotate(45deg);
+        //   -o-transform: rotate(45deg);
+        // }
+      }
+
+      &:hover {
+        background-color: $yellow-trans;
+        box-shadow: $shadow-general;
+        color: $light-text-primary;
+        border: $border-width-type3;
+      }
+    }
+  }
+}

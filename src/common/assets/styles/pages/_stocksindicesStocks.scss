@@ -1,0 +1,567 @@
+.stocksindices_layout {
+  //body
+  .indices_stocks_body {
+    width: 100%;
+    // max-height: fit-content;
+    padding-top: 0.5rem;
+    //tab-1
+
+    .stockIndicesStocks {
+      position: relative;
+
+      &_Sidebar {
+        width: 320px;
+        //height: 84vh;
+        height: calc(100vh - 150px);
+        background-color: $primary-dark;
+        position: absolute;
+        left: -100vw;
+        top: 24px;
+        box-shadow: $shadow-general;
+        opacity: 1;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        z-index: 9;
+
+        &.open {
+          left: -8px;
+          opacity: 1;
+          transition: 0.5s;
+          -webkit-transition: 0.5s;
+          -moz-transition: 0.5s;
+          -ms-transition: 0.5s;
+          -o-transition: 0.5s;
+        }
+
+        &-header {
+          @include flexBetweenRow();
+          padding: 8px;
+          border-bottom: $border-width-general;
+
+          p {
+            font-weight: 400;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: capitalize;
+            color: $light-text-primary;
+          }
+
+          .close {
+            color: $light-text-primary;
+            cursor: pointer;
+
+            &:hover {
+              color: $yellow-100;
+            }
+          }
+        }
+
+        &-search {
+          padding: 8px;
+          border-bottom: $border-width-general;
+        }
+
+        &-visited {
+          padding: 8px;
+          border-bottom: $border-width-general;
+
+          h5 {
+            font-weight: 400;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: uppercase;
+            color: $light-text-muted;
+            margin-bottom: 10px;
+          }
+
+          .tags {
+            @include flexStartRow();
+            flex-wrap: wrap;
+
+            .tag {
+              font-weight: 400;
+              font-size: $fontsize-default;
+              line-height: $fontsize-large5;
+              display: flex;
+              align-items: center;
+              text-align: center;
+              color: $dark-text-primary;
+              background: $yellow-100;
+              box-shadow: $shadow-general;
+              margin: 4px;
+              padding: 0px 7px;
+              cursor: pointer;
+              border-radius: $border-radius-default;
+              -webkit-border-radius: $border-radius-default;
+              -moz-border-radius: $border-radius-default;
+              -ms-border-radius: $border-radius-default;
+              -o-border-radius: $border-radius-default;
+            }
+          }
+        }
+
+        &-table {
+          &_header {
+            padding: 4px 8px;
+            border-bottom: $border-width-general;
+            @include flexBetweenRow();
+
+            .right {
+              @include flexStartRow();
+
+              .bt {
+                width: 16px;
+                height: 16px;
+                margin-left: 10px;
+                color: $light-text-primary;
+                cursor: pointer;
+
+                &:hover {
+                  color: $yellow-100;
+                }
+              }
+            }
+          }
+
+          &_body {
+            width: 100%;
+            height: calc(100vh - 355px);
+
+            .table {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      &_top {
+        @include flexStartRow();
+        border-bottom: $border-width-general;
+
+        &-left {
+          width: 300px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          span {
+            font-weight: 700;
+            font-size: $fontsize-large1;
+            line-height: $fontsize-large5;
+            text-transform: capitalize;
+            color: $light-text-primary;
+          }
+
+          svg {
+            margin-left: 7px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        &-right {
+          flex: 1;
+
+          .secondary_tabs {
+            &-item {
+              width: fit-content;
+              flex: 0;
+              white-space: nowrap;
+              padding: 8px;
+              border: $border-width-transparent;
+              margin-right: 1px;
+              border-radius: 1px;
+              -webkit-border-radius: 1px;
+              -moz-border-radius: 1px;
+              -ms-border-radius: 1px;
+              -o-border-radius: 1px;
+              position: relative;
+
+              &:hover {
+                border: $border-width-type3;
+              }
+
+              &.focused {
+                &::after {
+                  content: "";
+                  display: block;
+                  width: 10px;
+                  height: 10px;
+                  background-color: $blue-300;
+                  position: absolute;
+                  bottom: -40%;
+                  left: 40%;
+                  transform: translate(0%, -50%) rotate(45deg);
+                  -webkit-transform: translate(0%, -50%) rotate(45deg);
+                  -moz-transform: translate(0%, -50%) rotate(45deg);
+                  -ms-transform: translate(0%, -50%) rotate(45deg);
+                  -o-transform: translate(0%, -50%) rotate(45deg);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &_bottom {
+        width: 100%;
+        height: calc(100vh - 150px);
+        padding: 6px 0px;
+
+        .section {
+          width: inherit;
+          min-height: inherit;
+          height: 100%;
+          background-color: $secondary-dark;
+          border: 2px solid $primary-dark;
+
+          .header {
+            padding: 0.563rem;
+            width: 100%;
+            height: 2.188rem;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $fontsize-large1;
+            line-height: $fontsize-large5;
+            text-transform: uppercase;
+            color: $light-text-primary;
+            border-bottom: $border-width-general;
+            @include flexStartRow();
+
+            svg {
+              margin-left: 7px;
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+          .body {
+            padding: 10px 10px;
+
+            p {
+              font-weight: 400;
+              font-size: $fontsize-default;
+              line-height: $fontsize-large5;
+              color: $light-text-primary;
+            }
+          }
+        }
+
+        .TabSection {
+          height: 100%;
+        }
+
+        &-row {
+          @include flexStartRow();
+          align-items: flex-start;
+        }
+
+        .info {
+          width: 100%;
+        }
+
+        .businessOverview {
+          width: 400px;
+          min-height: 370px;
+          height: 38vh;
+          flex-shrink: 0;
+          flex-grow: 0;
+
+          &-details {
+            width: 100%;
+
+            &_row {
+              @include flexStartRow();
+              align-items: flex-start;
+
+              &-col {
+                flex: 1;
+              }
+            }
+          }
+        }
+
+        .pricePerformance {
+          width: 100%;
+          min-height: 370px;
+          height: 38vh;
+
+          &-body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            &_row {
+              @include flexStartRow();
+              align-items: flex-start;
+
+              &-col {
+                flex: 1;
+              }
+
+              .left {
+                width: 300px;
+                height: auto;
+              }
+
+              .right {
+                flex: 1;
+              }
+            }
+          }
+
+          &-numbers {
+            background-color: $dark-trans-quaternary;
+            padding: 10px;
+            width: 100%;
+
+            p {
+              font-weight: 400;
+              font-size: $fontsize-default;
+              line-height: $fontsize-large5;
+              color: $light-text-primary;
+            }
+          }
+
+          &-overview {
+            width: 100%;
+            padding: 10px;
+            background-color: $dark-trans-tertiary;
+
+            h5 {
+              font-weight: 400;
+              font-size: $fontsize-large4;
+              line-height: $fontsize-large5;
+              color: $light-text-muted;
+              margin-bottom: 12px;
+
+              span {
+                font-weight: 700;
+                font-size: $fontsize-large4;
+                line-height: $fontsize-large5;
+                color: $light-text-secondary;
+                margin-left: 6px;
+              }
+            }
+
+            .item {
+              width: 100%;
+              margin: 4px 0px;
+
+              &-top {
+                @include flexStartRow();
+                justify-content: space-between;
+
+                span {
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: $fontsize-default;
+                  line-height: $fontsize-large5;
+                }
+              }
+
+              &-bottom {
+                font-weight: 400;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large5;
+                color: $light-text-secondary;
+              }
+            }
+          }
+        }
+
+        .seasonality {
+          width: 100%;
+          min-height: 370px;
+          height: 38vh;
+
+          &-body {
+            width: 100%;
+            height: auto;
+
+            &_top {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 2px 8px;
+
+              .btns {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+              }
+            }
+          }
+
+          &_table {
+            width: 100% !important;
+            height: calc(38vh - 110px);
+          }
+
+          &-chart {
+            width: 100%;
+            height: calc(38vh - 120px);
+
+            &_header {
+              @include flexStartRow();
+              align-items: flex-start;
+              background-color: $dark-trans-secondary;
+              padding: 4px;
+
+              &-left {
+                width: 120px;
+
+                p {
+                  font-weight: 300;
+                  font-size: $fontsize-small1;
+                  line-height: $fontsize-default;
+                  text-transform: capitalize;
+                  color: $light-text-muted;
+                }
+              }
+
+              &-right {
+                @include flexStartRow();
+                align-items: flex-start;
+                flex: 1;
+
+                &_item {
+                  // width: 66px;
+                  display: flex;
+                  flex: 1;
+                  // flex-grow: 0;
+                  // flex-shrink: 0;
+                  text-transform: uppercase;
+                  margin: 0px 1px;
+
+                  &:last-child {
+                    font-weight: 300;
+                    font-size: $fontsize-default;
+                    line-height: $fontsize-large1;
+                    text-transform: capitalize;
+                    color: $light-text-primary;
+                  }
+                }
+              }
+            }
+
+            &_body {
+              &-row {
+                @include flexStartRow();
+                width: 100%;
+                height: 25px;
+                margin: 1px 0px;
+
+                &.odd {
+                  background-color: $dark-trans-secondary;
+                }
+
+                &-left {
+                  width: 120px;
+                  height: 25px;
+                  padding: 4px 4px;
+                }
+
+                &-right {
+                  @include flexStartRow();
+                  flex: 1;
+
+                  &_item {
+                    @include flexStartRow();
+                    // width: 66px;
+                    display: flex;
+                    flex: 1;
+                    height: 25px;
+                    // flex-grow: 0;
+                    // flex-shrink: 0;
+                    text-transform: uppercase;
+                    justify-content: center;
+                    margin: 0px 1px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .pattern {
+          width: 400px;
+          min-height: 370px;
+          height: 38vh;
+          flex-grow: 0;
+          flex-shrink: 0;
+
+          &-body {
+            width: 100%;
+
+            &_row {
+              @include flexStartRow();
+              width: 100%;
+              padding: 4px;
+
+              &-left {
+                width: 100px;
+                font-weight: 300;
+                font-size: $fontsize-small1;
+                line-height: $fontsize-default;
+                text-transform: capitalize;
+                color: $light-text-primary;
+              }
+
+              &-right {
+                width: 100%;
+                @include flexBetweenRow();
+
+                .dates {
+                  @include flexStartRow();
+                  height: 25px;
+                  width: 100%;
+                  padding: 4px 9px;
+                  background-color: $dark-trnas-primary;
+                  border-radius: $border-radius-default;
+                  -webkit-border-radius: $border-radius-default;
+                  -moz-border-radius: $border-radius-default;
+                  -ms-border-radius: $border-radius-default;
+                  -o-border-radius: $border-radius-default;
+
+                  .item {
+                    @include flexCenter(row);
+                    flex: 1;
+                    font-weight: 300;
+                    font-size: $fontsize-small1;
+                    line-height: $fontsize-default;
+                    text-transform: capitalize;
+                  }
+                }
+              }
+            }
+
+            &_list {
+              padding: 0px 4px 1px;
+
+              .item {
+                padding: 18px 15px;
+                background: $dark-trans-secondary;
+                font-weight: 600;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large1;
+                text-transform: capitalize;
+                color: $light-text-primary;
+                margin-bottom: 2px;
+                border-radius: $border-radius-default;
+                -webkit-border-radius: $border-radius-default;
+                -moz-border-radius: $border-radius-default;
+                -ms-border-radius: $border-radius-default;
+                -o-border-radius: $border-radius-default;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

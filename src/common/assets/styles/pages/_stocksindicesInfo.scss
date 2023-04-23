@@ -1,0 +1,348 @@
+.stocksindices_layout {
+  overflow-x: hidden;
+  display: flex;
+  gap: 0.5rem;
+  width: 100vw;
+  // max-height: 60%;
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-top-tab-bg;
+    min-height: 100vh;
+
+    .icon {
+      cursor: pointer;
+      font-size: $fontsize-large5;
+      padding: 0.5rem 0.5rem 0 0.5rem;
+      border-bottom: $border-width-general;
+
+      &:hover {
+        background-color: $blue-200;
+      }
+
+      &.active {
+        background-color: $blue-200;
+      }
+    }
+  }
+
+  //body
+  .indices_stocks_body {
+    width: 100%;
+    // max-height: fit-content;
+    padding-top: 0.5rem;
+    //tab-1
+
+    .tab1 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .left {
+        flex-grow: 1;
+      }
+
+      .side {
+        flex-grow: 0;
+
+        .sider {
+          right: 0.3rem;
+          background-color: $octonary-dark;
+          height: 90vh;
+          width: 10px;
+          transition-duration: 0.5s;
+
+          .content {
+            display: none;
+
+            .heading {
+              padding: 0.7rem;
+              border-bottom: $border-width-general;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .left {
+                // width: 40%;
+                flex: 1;
+
+                img {
+                  width: auto;
+                  height: 3rem;
+                }
+              }
+
+              .right {
+                // width: 50%;
+                font-size: $fontsize-large6;
+                font-weight: 300;
+                flex: 2;
+              }
+
+              .icon {
+                font-size: $fontsize-large1;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+              }
+            }
+
+            //main
+            .main {
+              padding: 0.7rem;
+
+              .time-stamp {
+                margin-bottom: 0.5rem;
+                color: $light-text-muted;
+              }
+
+              p {
+                white-space: pre-line;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large4;
+              }
+            }
+          }
+
+          &.active {
+            width: 486px;
+
+            .content {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .arrow {
+      position: relative;
+      left: -1rem;
+      top: 40%;
+      background-color: $octonary-dark;
+      display: flex;
+      padding: 1rem 0.3rem;
+      width: 2rem;
+
+      &.active {
+        top: 0;
+      }
+    }
+  }
+
+  //corporate actions
+  .corporate-actions {
+    // height: 90vh;
+    width: 100vw;
+
+    .row {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+      border-top: $border-width-type7;
+      padding-top: 0.2rem;
+      // justify-content: space-between;
+
+      .left {
+        width: 40%;
+        max-width: 40%;
+        min-width: 40%;
+        height: 78vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .item {
+          background-color: $light-top-tab-bg;
+          transition-duration: 0.2s;
+          max-width: 100%;
+          border-radius: 4px 0 0 4px;
+          -webkit-border-radius: 4px 0 0 4px;
+          -moz-border-radius: 4px 0 0 4px;
+          -ms-border-radius: 4px 0 0 4px;
+          -o-border-radius: 4px 0 0 4px;
+
+          &.active {
+            background-color: $blue-200;
+          }
+
+          &:hover {
+            background-color: $blue-200;
+          }
+
+          h2 {
+            padding: 3px 0.5rem;
+            border-bottom: $border-width-type7;
+            font-size: $fontsize-large3;
+          }
+
+          .row {
+            // border-bottom: $border-width-general;
+            width: 100%;
+          }
+
+          .corporateActionSideTable {
+            height: 140px;
+            // height: calc(100% - 25px)
+          }
+
+          .ag {
+            max-width: 100%;
+            padding: 0rem;
+          }
+        }
+      }
+
+      .right {
+        width: 60%;
+        height: 78vh;
+        // background: #3e0505;
+
+        .table1 {
+          width: 100%;
+
+          .corporateActionTable {
+            // height: 140px;
+            height: calc(100% - 25px);
+          }
+
+          .ag {
+            width: 93%;
+            min-height: fit-content;
+          }
+        }
+
+        .row {
+          // border-bottom: $border-width-general;
+        }
+      }
+    }
+  }
+
+  //insider-training
+  .insider-training {
+    width: 100vw;
+    .body {
+      width: 100%;
+      border-top: $border-width-type7;
+      display: flex;
+      gap: 2rem;
+      padding-top: 0.2rem;
+      // justify-content: space-between;
+      .left {
+        width: 40%;
+        max-width: 40%;
+        min-width: 40%;
+        height: 74vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .item {
+          max-width: 100%;
+          background-color: $light-top-tab-bg;
+          transition-duration: 0.2s;
+          border-radius: 4px 0 0 4px;
+          -webkit-border-radius: 4px 0 0 4px;
+          -moz-border-radius: 4px 0 0 4px;
+          -ms-border-radius: 4px 0 0 4px;
+          -o-border-radius: 4px 0 0 4px;
+
+          &.active {
+            background-color: $blue-200;
+          }
+
+          &:hover {
+            background-color: $blue-200;
+          }
+
+          h2 {
+            padding: 3px 0.5rem;
+            border-bottom: $border-width-type7;
+            font-size: $fontsize-large3;
+          }
+
+          .row {
+            border-top: $border-width-type7;
+            width: 100%;
+          }
+
+          .insiderTrainingSideTable {
+            height: 155px;
+            // height: calc(100% - 25px)
+          }
+
+          .ag {
+            padding: 0rem;
+          }
+        }
+      }
+
+      .right {
+        width: 60%;
+
+        // height: 100%;
+
+        .insiderTrainingTable {
+          // height: 140px;
+          height: calc(100% - 25px);
+        }
+
+        .table1 {
+          width: 100%;
+
+          .ag {
+            width: 93%;
+            min-height: fit-content;
+          }
+        }
+
+        .row {
+          border-top: $border-width-type7;
+        }
+      }
+    }
+  }
+}
+
+//top-tab
+.top-tab {
+  display: flex;
+  gap: 0.5rem;
+
+  .tab-item {
+    background-color: $quinary-dark;
+    padding: 0.1rem 0.5rem;
+    box-sizing: border-box;
+    border-radius: $border-radius-default;
+    -webkit-border-radius: $border-radius-default;
+    -moz-border-radius: $border-radius-default;
+    -ms-border-radius: $border-radius-default;
+    -o-border-radius: $border-radius-default;
+
+    &.active {
+      background-color: $blue-200;
+    }
+
+    &:hover {
+      background-color: $blue-200;
+      cursor: pointer;
+    }
+  }
+}

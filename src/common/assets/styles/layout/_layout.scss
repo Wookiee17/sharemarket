@@ -1,0 +1,55 @@
+.Layout {
+  &.light {
+    background-color: $primary-light;
+    color: $dark-text-primary;
+  }
+
+  &.dark {
+    background-color: $primary-dark;
+    color: $light-text-primary;
+  }
+
+  width: 100%;
+  height: 100vh;
+  @include flexCenter(column);
+
+  .main_body {
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+.layout-tabs {
+  @include flexBetweenRow();
+  padding: 0.625rem;
+
+  &-menu {
+    @include flexStartRow();
+    &-item {
+      font-size: $fontsize-default;
+      line-height: 0.75rem;
+      padding-right: 0.625rem;
+      margin-right: 0.625rem;
+      border-right: $border-width-general;
+      color: $blue-300;
+      cursor: pointer;
+
+      &.active {
+        color: $yellow-100;
+      }
+
+      &:last-child {
+        border-right: 0rem solid $transparent;
+      }
+
+      &:hover {
+        color: $yellow-100;
+      }
+    }
+  }
+
+  & ~ .TabSection {
+    height: 100%;
+  }
+}

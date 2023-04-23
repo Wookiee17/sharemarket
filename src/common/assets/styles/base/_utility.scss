@@ -1,0 +1,1645 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.g1 {
+  background-color: $green-400 !important;
+  color: $light-text-primary !important;
+}
+
+.g2 {
+  background-color: $green-300 !important;
+  color: $light-text-primary !important;
+}
+
+.g3 {
+  background-color: $green-100 !important;
+  color: $light-text-primary !important;
+}
+
+.n {
+  background-color: $quinary-light !important;
+  color: $dark-text-primary !important;
+}
+
+.d1 {
+  background-color: $red-100 !important;
+  color: $dark-text-primary !important;
+}
+
+.d2 {
+  background-color: $red-300 !important;
+  color: $light-text-primary !important;
+}
+
+.d3 {
+  background-color: $red-400 !important;
+  color: $light-text-primary !important;
+}
+
+.cGreen {
+  color: #3ad000;
+  margin-right: 0.313rem;
+}
+
+.cRed {
+  color: #ff4a4a;
+  margin-right: 0.313rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.color-yellow {
+  color: $yellow-100;
+}
+
+.bg-blue {
+  background-color: #1890ff !important ;
+}
+
+.bg-green {
+  background-color: #52c41a !important ;
+}
+
+.bg-red {
+  background-color: #ff4a4a !important ;
+}
+
+.bg-pink {
+  background-color: #ff85c0 !important ;
+}
+
+.d-flex-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.row {
+  @include flexStartRow();
+}
+
+.margin {
+  @include res(desk-lg) {
+    &-y {
+      &_1 {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+      &_2 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      &_3 {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+      &_4 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      &_5 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+    &-x {
+      &_1 {
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+      &_2 {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      &_3 {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      &_4 {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      &_5 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    &-l {
+      &_1 {
+        padding-left: 3px;
+      }
+      &_2 {
+        padding-left: 5px;
+      }
+      &_3 {
+        padding-left: 7px;
+      }
+      &_4 {
+        padding-left: 10px;
+      }
+      &_5 {
+        padding-left: 15px;
+      }
+    }
+    &-r {
+      &_1 {
+        padding-right: 3px;
+      }
+      &_2 {
+        padding-right: 5px;
+      }
+      &_3 {
+        padding-right: 7px;
+      }
+      &_4 {
+        padding-right: 10px;
+      }
+      &_5 {
+        padding-right: 15px;
+      }
+    }
+    &-t {
+      &_1 {
+        padding-top: 3px;
+      }
+      &_2 {
+        padding-top: 5px;
+      }
+      &_3 {
+        padding-top: 7px;
+      }
+      &_4 {
+        padding-top: 10px;
+      }
+      &_5 {
+        padding-top: 15px;
+      }
+    }
+    &-b {
+      &_1 {
+        padding-bottom: 3px;
+      }
+      &_2 {
+        padding-bottom: 5px;
+      }
+      &_3 {
+        padding-bottom: 7px;
+      }
+      &_4 {
+        padding-bottom: 10px;
+      }
+      &_5 {
+        padding-bottom: 15px;
+      }
+    }
+  }
+  @include res(desk) {
+    &-y {
+      &_1 {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+      &_2 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      &_3 {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+      &_4 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      &_5 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+    &-x {
+      &_1 {
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+      &_2 {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      &_3 {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      &_4 {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      &_5 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    &-l {
+      &_1 {
+        padding-left: 3px;
+      }
+      &_2 {
+        padding-left: 5px;
+      }
+      &_3 {
+        padding-left: 7px;
+      }
+      &_4 {
+        padding-left: 10px;
+      }
+      &_5 {
+        padding-left: 15px;
+      }
+    }
+    &-r {
+      &_1 {
+        padding-right: 3px;
+      }
+      &_2 {
+        padding-right: 5px;
+      }
+      &_3 {
+        padding-right: 7px;
+      }
+      &_4 {
+        padding-right: 10px;
+      }
+      &_5 {
+        padding-right: 15px;
+      }
+    }
+    &-t {
+      &_1 {
+        padding-top: 3px;
+      }
+      &_2 {
+        padding-top: 5px;
+      }
+      &_3 {
+        padding-top: 7px;
+      }
+      &_4 {
+        padding-top: 10px;
+      }
+      &_5 {
+        padding-top: 15px;
+      }
+    }
+    &-b {
+      &_1 {
+        padding-bottom: 3px;
+      }
+      &_2 {
+        padding-bottom: 5px;
+      }
+      &_3 {
+        padding-bottom: 7px;
+      }
+      &_4 {
+        padding-bottom: 10px;
+      }
+      &_5 {
+        padding-bottom: 15px;
+      }
+    }
+  }
+  @include res(desk-sm) {
+    &-y {
+      &_1 {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+      &_2 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      &_3 {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+      &_4 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      &_5 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+    &-x {
+      &_1 {
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+      &_2 {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      &_3 {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      &_4 {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      &_5 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    &-l {
+      &_1 {
+        padding-left: 3px;
+      }
+      &_2 {
+        padding-left: 5px;
+      }
+      &_3 {
+        padding-left: 7px;
+      }
+      &_4 {
+        padding-left: 10px;
+      }
+      &_5 {
+        padding-left: 15px;
+      }
+    }
+    &-r {
+      &_1 {
+        padding-right: 3px;
+      }
+      &_2 {
+        padding-right: 5px;
+      }
+      &_3 {
+        padding-right: 7px;
+      }
+      &_4 {
+        padding-right: 10px;
+      }
+      &_5 {
+        padding-right: 15px;
+      }
+    }
+    &-t {
+      &_1 {
+        padding-top: 3px;
+      }
+      &_2 {
+        padding-top: 5px;
+      }
+      &_3 {
+        padding-top: 7px;
+      }
+      &_4 {
+        padding-top: 10px;
+      }
+      &_5 {
+        padding-top: 15px;
+      }
+    }
+    &-b {
+      &_1 {
+        padding-bottom: 3px;
+      }
+      &_2 {
+        padding-bottom: 5px;
+      }
+      &_3 {
+        padding-bottom: 7px;
+      }
+      &_4 {
+        padding-bottom: 10px;
+      }
+      &_5 {
+        padding-bottom: 15px;
+      }
+    }
+  }
+  &-md {
+    @include res(tab-lg) {
+      &-y {
+        &_1 {
+          padding-top: 3px;
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+      &-x {
+        &_1 {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      &-l {
+        &_1 {
+          padding-left: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+        }
+      }
+      &-r {
+        &_1 {
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-right: 15px;
+        }
+      }
+      &-t {
+        &_1 {
+          padding-top: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+        }
+      }
+      &-b {
+        &_1 {
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-bottom: 15px;
+        }
+      }
+    }
+    @include res(tab) {
+      &-y {
+        &_1 {
+          padding-top: 3px;
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+      &-x {
+        &_1 {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      &-l {
+        &_1 {
+          padding-left: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+        }
+      }
+      &-r {
+        &_1 {
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-right: 15px;
+        }
+      }
+      &-t {
+        &_1 {
+          padding-top: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+        }
+      }
+      &-b {
+        &_1 {
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-bottom: 15px;
+        }
+      }
+    }
+    @include res(tab-sm) {
+      &-y {
+        &_1 {
+          padding-top: 3px;
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+      &-x {
+        &_1 {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      &-l {
+        &_1 {
+          padding-left: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+        }
+      }
+      &-r {
+        &_1 {
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-right: 15px;
+        }
+      }
+      &-t {
+        &_1 {
+          padding-top: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+        }
+      }
+      &-b {
+        &_1 {
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+  &-sm {
+    @include res(phone) {
+      &-y {
+        &_1 {
+          padding-top: 3px;
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+      &-x {
+        &_1 {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      &-l {
+        &_1 {
+          padding-left: 3px;
+        }
+        &_2 {
+          padding-left: 5px;
+        }
+        &_3 {
+          padding-left: 7px;
+        }
+        &_4 {
+          padding-left: 10px;
+        }
+        &_5 {
+          padding-left: 15px;
+        }
+      }
+      &-r {
+        &_1 {
+          padding-right: 3px;
+        }
+        &_2 {
+          padding-right: 5px;
+        }
+        &_3 {
+          padding-right: 7px;
+        }
+        &_4 {
+          padding-right: 10px;
+        }
+        &_5 {
+          padding-right: 15px;
+        }
+      }
+      &-t {
+        &_1 {
+          padding-top: 3px;
+        }
+        &_2 {
+          padding-top: 5px;
+        }
+        &_3 {
+          padding-top: 7px;
+        }
+        &_4 {
+          padding-top: 10px;
+        }
+        &_5 {
+          padding-top: 15px;
+        }
+      }
+      &-b {
+        &_1 {
+          padding-bottom: 3px;
+        }
+        &_2 {
+          padding-bottom: 5px;
+        }
+        &_3 {
+          padding-bottom: 7px;
+        }
+        &_4 {
+          padding-bottom: 10px;
+        }
+        &_5 {
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.padding {
+  &-y {
+    &_1 {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+    &_2 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    &_3 {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    &_4 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    &_5 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  &-x {
+    &_1 {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+    &_2 {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    &_3 {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+    &_4 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &_5 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  &-l {
+    &_1 {
+      padding-left: 3px;
+    }
+    &_2 {
+      padding-left: 5px;
+    }
+    &_3 {
+      padding-left: 7px;
+    }
+    &_4 {
+      padding-left: 10px;
+    }
+    &_5 {
+      padding-left: 15px;
+    }
+  }
+  &-r {
+    &_1 {
+      padding-right: 3px;
+    }
+    &_2 {
+      padding-right: 5px;
+    }
+    &_3 {
+      padding-right: 7px;
+    }
+    &_4 {
+      padding-right: 10px;
+    }
+    &_5 {
+      padding-right: 15px;
+    }
+  }
+  &-t {
+    &_1 {
+      padding-top: 3px;
+    }
+    &_2 {
+      padding-top: 5px;
+    }
+    &_3 {
+      padding-top: 7px;
+    }
+    &_4 {
+      padding-top: 10px;
+    }
+    &_5 {
+      padding-top: 15px;
+    }
+  }
+  &-b {
+    &_1 {
+      padding-bottom: 3px;
+    }
+    &_2 {
+      padding-bottom: 5px;
+    }
+    &_3 {
+      padding-bottom: 7px;
+    }
+    &_4 {
+      padding-bottom: 10px;
+    }
+    &_5 {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.d-none {
+  display: none !important;
+
+  &-desk-lg {
+    @include res(desk-lg) {
+      display: none;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-desk {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: none;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-desk-sm {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: none;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab-lg {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: none;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: none;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab-sm {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: none;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-phone {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: none;
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
+
+  &-desk-lg {
+    @include res(desk-lg) {
+      display: flex;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-desk {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: flex;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-desk-sm {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: flex;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab-lg {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: flex;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: flex;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab-sm {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: flex;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-phone {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: flex;
+    }
+  }
+}
+
+.d-block {
+  display: block;
+
+  &-desk-lg {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-desk {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-desk-sm {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab-lg {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-tab-sm {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+
+  &-phone {
+    @include res(desk-lg) {
+      display: block;
+    }
+
+    @include res(desk) {
+      display: block;
+    }
+
+    @include res(desk-sm) {
+      display: block;
+    }
+
+    @include res(tab-lg) {
+      display: block;
+    }
+
+    @include res(tab) {
+      display: block;
+    }
+
+    @include res(tab-sm) {
+      display: block;
+    }
+
+    @include res(phone) {
+      display: block;
+    }
+  }
+}

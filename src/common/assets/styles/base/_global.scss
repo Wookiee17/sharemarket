@@ -1,0 +1,223 @@
+html {
+  // font-size: 62.5%;
+  scroll-behavior: smooth;
+  --antd-wave-shadow-color: #1890ff00;
+  --scroll-bar: 0;
+
+  body {
+    font-size: $fontsize-default;
+    font-family: $fontfamily-primary;
+    background-color: $primary-light;
+
+    .light {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin-bottom: 0rem;
+        color: $dark-text-primary;
+      }
+
+      .ant-table {
+        background-color: $transparent;
+      }
+      .ant-table-tbody > tr > td {
+        background: $primary-light;
+        color: $dark-text-primary;
+        border-bottom: $border-width-general;
+      }
+      .ant-table-thead > tr > th {
+        padding: 2px 0.625rem;
+        font-size: $fontsize-small1-1;
+        font-weight: 300;
+        border-right: $border-width-general;
+      }
+      .ant-table-tbody > tr > td,
+      .ant-table tfoot > tr > th,
+      .ant-table tfoot > tr > td {
+        padding: 2px 0.625rem;
+        font-size: $fontsize-default;
+        font-weight: 400;
+        border-right: $border-width-general;
+      }
+      .ant-table-tbody > tr.ant-table-row:hover > td,
+      .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+        background-color: $yellow-trans;
+        border-bottom: $border-width-type3;
+      }
+      .ant-table-thead > tr > th {
+        background: $table-header;
+        color: $dark-text-primary;
+        border-bottom: $border-width-general;
+      }
+      .ant-table-row-expand-icon {
+        background: $primary-light;
+        border: 0px solid $primary-light;
+        color: $dark-text-primary;
+      }
+      .ant-table-row-indent {
+        padding-left: 0rem !important;
+      }
+      .ant-table-selection-col,
+      .ant-table-selection-column {
+        display: none;
+      }
+      .ant-table-tbody > tr.ant-table-row.active > td {
+        background-color: $blue-200;
+        border-bottom: $border-width-type3;
+      }
+      .ant-carousel .slick-dots-bottom {
+        bottom: 0px;
+      }
+      .ant-checkbox-wrapper {
+        font-size: $fontsize-default;
+      }
+    }
+
+    .dark {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin-bottom: 0rem;
+        color: $light-text-primary;
+      }
+
+      .ant.calendar {
+        .ant-picker-calendar {
+          background: rgba(64, 64, 64, 0.5);
+        }
+        .ant-picker-calendar .ant-picker-panel {
+          background: rgba(64, 64, 64, 0.5);
+        }
+        .ant-picker-content th {
+          color: $light-text-muted;
+        }
+        .ant-picker-cell {
+          color: $light-text-muted;
+        }
+        .ant-picker-cell-in-view {
+          color: $light-text-primary;
+        }
+        .ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end)
+          .ant-picker-cell-inner {
+          background-color: #fff2;
+        }
+        .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+          background-color: #fff1;
+          border: 1px solid #d9d9d922;
+          color: #fff;
+        }
+        .ant-select-arrow {
+          color: #fff;
+        }
+        .ant-radio-button-wrapper {
+          background: #fff1;
+          border: 1px solid #d9d9d922;
+          color: #fff;
+          margin-right: -1px;
+        }
+        .ant-radio-button-wrapper.ant-radio-button-wrapper-checked {
+          border: 1px solid #40a9ff;
+          color: #40a9ff;
+        }
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+          background: #fff1;
+        }
+      }
+
+      .ant-table {
+        background-color: $transparent;
+      }
+      .ant-table-sticky-holder {
+        background-color: #33343e;
+      }
+      .ant-table-tbody > tr > td {
+        background: $secondary-dark;
+        color: $light-text-primary;
+        border-bottom: $border-width-general;
+      }
+      .ant-table-thead > tr > th {
+        padding: 2px 0.625rem;
+        font-size: $fontsize-small1-1;
+        font-weight: 300;
+        border-right: $border-width-general;
+      }
+      .ant-table-tbody > tr > td,
+      .ant-table tfoot > tr > th,
+      .ant-table tfoot > tr > td {
+        padding: 2px 0.625rem;
+        font-size: $fontsize-default;
+        font-weight: 400;
+        border-right: $border-width-general;
+      }
+      .ant-table-tbody > tr.ant-table-row:hover > td,
+      .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+        background-color: $yellow-trans;
+        border-bottom: $border-width-type3;
+      }
+      .ant-table-thead > tr > th {
+        background: $table-header;
+        color: $light-text-primary;
+        border-bottom: $border-width-general;
+      }
+      .ant-table-row-expand-icon {
+        background: $secondary-dark;
+        border: 0px solid $secondary-dark;
+        color: $light-text-primary;
+      }
+      .ant-table-row-indent {
+        padding-left: 0rem !important;
+      }
+      .ant-table-selection-col,
+      .ant-table-selection-column {
+        display: none;
+      }
+      .ant-table-tbody > tr.ant-table-row.active > td {
+        background-color: $blue-200;
+        border-bottom: $border-width-type2;
+      }
+
+      .ant-carousel .slick-dots-bottom {
+        bottom: 0px;
+      }
+      .ant-checkbox-wrapper {
+        font-size: $fontsize-default;
+      }
+    }
+  }
+
+  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: #40a9ff00;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: $secondary-dark;
+    border: 1px solid $secondary-dark !important;
+  }
+
+  .ant-select-selection-item {
+    color: $primary-light !important;
+  }
+
+  .ant-select-arrow {
+    color: rgba($primary-light, 0.5);
+  }
+
+  .ant-select-dropdown {
+    background-color: $quaternary-dark;
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled),
+  .ant-select-item-option-content,
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    color: $primary-light;
+    font-weight: 400;
+    background-color: $quaternary-dark;
+  }
+}

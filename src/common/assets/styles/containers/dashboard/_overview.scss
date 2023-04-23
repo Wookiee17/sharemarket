@@ -1,0 +1,266 @@
+.OverView {
+  @include flexStartRow();
+  width: inherit;
+  height: 100%;
+}
+
+.SideFilter_list {
+  width: 20.625rem;
+  height: 100%;
+  @include flexStartRow();
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &-left {
+    flex: 1;
+    height: 100%;
+    overflow-y: hidden;
+
+    &.light {
+      background-color: $light-sidebar-bg;
+      color: $blue-200;
+      border-right: $border-width-type1;
+    }
+
+    &.dark {
+      // background-color: $secondary-dark;
+      background-color: #272933;
+      color: $light-text-primary;
+      border-right: $border-width-type2;
+    }
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+
+    &_item {
+      padding: 0.125rem 0.5rem;
+      font-size: $fontsize-default;
+      font-weight: 400;
+      height: 1.563rem;
+      cursor: pointer;
+      border: 0.25px solid $transparent;
+
+      &.light {
+        border-bottom: $border-width-type1;
+      }
+
+      &.dark {
+        border-bottom: $border-width-type2;
+      }
+
+      &:hover {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+
+        &.light {
+          color: $dark-text-primary;
+        }
+      }
+
+      &.active {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+        box-shadow: $shadow-general;
+
+        &.light {
+          color: $dark-text-primary;
+        }
+
+        &.dark {
+          color: $light-text-primary;
+        }
+      }
+    }
+  }
+
+  &-right {
+    flex: 1.25;
+    height: 100%;
+    background-color: $secondary-dark;
+    overflow-y: hidden;
+
+    &.light {
+      background-color: $light-sidebar-bg;
+      color: $dark-text-secondary;
+    }
+
+    &.dark {
+      background-color: $dark-sidebar-bg;
+      color: $light-text-primary;
+    }
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+
+    &_item {
+      padding: 0.2rem 0.8rem;
+      font-size: $fontsize-default;
+      font-weight: 400;
+      height: 1.563rem;
+      cursor: pointer;
+      border: 0.25px solid $transparent;
+
+      &.light {
+        border-bottom: $border-width-type1;
+      }
+
+      &.dark {
+        border-bottom: $border-width-type2;
+      }
+
+      &:hover {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+        color: $dark-text-primary;
+      }
+
+      &.active {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+        box-shadow: $shadow-general;
+        color: $dark-text-primary;
+      }
+
+      &.dark {
+        &:hover {
+          background-color: $yellow-trans;
+          border: $border-width-type3;
+          color: $light-text-primary;
+        }
+
+        &.active {
+          background-color: $yellow-trans;
+          border: $border-width-type3;
+          box-shadow: $shadow-general;
+          color: $light-text-primary;
+        }
+      }
+    }
+  }
+}
+
+.OverView_table {
+  // flex: 0.7;
+  width: 33.375rem;
+  height: 100%;
+}
+
+.OverView_chart {
+  flex: 1;
+  height: 100%;
+}
+
+.OverView_table-action {
+  position: relative;
+  margin-left: -20px;
+  margin-top: 0px;
+
+  &-icon {
+    background-color: $table-header;
+    width: 50px;
+    height: 1.563rem;
+    @include flexCenter(row);
+  }
+
+  &-menu {
+    width: 12.5rem;
+    position: absolute;
+    top: 0.625rem;
+    right: 1.25rem;
+    padding: 0.625rem 0rem 1.063rem;
+    box-shadow: $shadow-general;
+
+    &.light {
+      background-color: $senary-light;
+      border: $border-width-general;
+    }
+
+    &.dark {
+      background-color: $quaternary-dark;
+      border: $border-width-general;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+
+      &.light {
+        background-color: $dark-top-tab-bg;
+      }
+
+      &.dark {
+        background: $senary-dark;
+      }
+    }
+
+    &_item {
+      @include flexStartRow();
+      padding: 0rem 0.625rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $yellow-trans;
+      }
+
+      &-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        @include flexCenter(row);
+      }
+
+      &-text {
+        height: 1.375rem;
+        font-size: $fontsize-default;
+        font-weight: 400;
+        @include flexCenter(row);
+        opacity: 0.9;
+      }
+    }
+  }
+}

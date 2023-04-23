@@ -1,0 +1,335 @@
+/* mixins css */
+/*------------------------------------------------------------------------------------------------------------ */
+/* clearfix for floated elemments */
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+/* */
+/*  absCenter */
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* absTopLeft */
+@mixin absTopLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* absTopRight */
+@mixin absTopRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* absTopL */
+@mixin absTopL($number) {
+  position: absolute;
+  top: 0;
+  left: $number;
+}
+/* absTopR */
+@mixin absTopR($number) {
+  position: absolute;
+  top: 0;
+  right: $number;
+}
+/* absLeftT */
+@mixin absLeftT($number) {
+  position: absolute;
+  left: 0;
+  top: $number;
+}
+/* absRightT */
+@mixin absRightT($number) {
+  position: absolute;
+  right: 0;
+  top: $number;
+}
+/* absBottomLeft */
+@mixin absBottomLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/* absBottomRight */
+@mixin absBottomRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* absBottomL */
+@mixin absBottomL($number) {
+  position: absolute;
+  bottom: 0;
+  left: $number;
+}
+/* absBottomR */
+@mixin absBottomR($number) {
+  position: absolute;
+  bottom: 0;
+  right: $number;
+}
+/* absLeftB */
+@mixin absLeftB($number) {
+  position: absolute;
+  left: 0;
+  bottom: $number;
+}
+/* absRightB */
+@mixin absRightB($number) {
+  position: absolute;
+  right: 0;
+  bottom: $number;
+}
+/* */
+/* flexCenter */
+@mixin flexCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+/* flexRowStart */
+@mixin flexRowStart() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+/* flexRowStartCenter */
+@mixin flexRowStartCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+/* flexRowCenterStart */
+@mixin flexRowCenterStart() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+}
+/* flexRowEnd */
+@mixin flexRowEnd() {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+/* flexRowEndCenter */
+@mixin flexRowEndCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+/* flexRowCenterEnd */
+@mixin flexRowCenterEnd() {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+}
+/* flexRowBetweenCenter */
+@mixin flexRowBetweenCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+/* flexRowCenterBetween */
+@mixin flexRowCenterBetween() {
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+  flex-direction: row;
+}
+/* flexColumnStart */
+@mixin flexColumnStart() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+/* flexColumnStartCenter */
+@mixin flexColumnStartCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+/* flexColumnCenterStart */
+@mixin flexColumnCenterStart() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+/* flexColumnStartBetween */
+@mixin flexColumnStartBetween() {
+  display: flex;
+  align-items: space-between;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+/* flexColumnBetweenStart */
+@mixin flexColumnBetweenStart() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+/* flexColumnEnd */
+@mixin flexColumnEnd() {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+/* flexColumnEndCenter */
+@mixin flexColumnEndCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+/* flexColumnCenterEnd */
+@mixin flexColumnCenterEnd() {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*------------------------------------------------------------------------------------------------------------ */
+
+/* MEDIA QUERY MANAGER */
+/*
+  0 - 600px:         Phone
+  600 - 1024px:      Tablet portrait
+  1024 - 1200px:     Tablet landscape
+  1200 - 1440px:     Desktop Normal
+  1440+px:           Desktop Large
+  $breakpoint arguement choices:
+  - phone-sm
+  - phone
+  - phone-lg
+  - tab-sm
+  - tab
+  - tab-lg
+  - desktop-sm
+  - desktop
+  - desktop-lg
+  ORDER: Base + typography > general layout + grid > page layout > components
+  1em = 16px
+*/
+@mixin res($breakpoint) {
+  @if $breakpoint == phone-sm {
+    @media only screen and (max-width: 360px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-lg {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-sm {
+    @media only screen and (max-width: 769px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-lg {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desk-sm {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desk {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desk-lg {
+    @media only screen and (min-width: 1441px) {
+      @content;
+    }
+  }
+}
+/* custome responsive mixin */
+@mixin cusResponsive($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------------ */
+/* */
+/* Themes Array */
+$themes: (
+  light: (
+    bg-color: $bg-light,
+    text-color: $light-text-color,
+    border-color: $bg-light-border,
+  ),
+  dark: (
+    bg-color: $bg-dark,
+    text-color: $dark-text-color,
+    border-color: $bg-dark-border,
+  ),
+);
+
+// themify
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+// themed
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+// apply theme
+@mixin applyTheme() {
+  @include themify($themes) {
+    background: themed($bg-color);
+    color: getTextColorBasedOnBG(themed($bg-color));
+  }
+}

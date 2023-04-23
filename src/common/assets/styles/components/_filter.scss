@@ -1,0 +1,10 @@
+.filter-tab {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+}

@@ -1,0 +1,60 @@
+.hamburger {
+  color: $dark-text-primary;
+  position: relative;
+  z-index: 9;
+
+  &.dark {
+    color: $light-text-primary;
+  }
+
+  &_btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    @include flexCenter(row);
+    margin: 0rem 0.938rem;
+    cursor: pointer;
+    background-color: $primary-light;
+
+    &.dark {
+      background-color: $primary-dark;
+    }
+
+    &:hover {
+      color: $blue-100;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
+      color: $blue-100;
+    }
+
+    svg {
+      font-size: $fontsize-large5;
+    }
+  }
+
+  aside {
+    width: 12.5rem;
+    height: calc(100vh - 50px);
+    z-index: 99;
+    background-color: $blue-100;
+    padding: 0.625rem;
+    position: absolute;
+    top: 1.875rem;
+    left: -100vh;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    &.active {
+      left: -70%;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+    }
+  }
+}

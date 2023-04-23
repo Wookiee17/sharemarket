@@ -1,0 +1,50 @@
+.search {
+  width: 18.75rem;
+  height: 1.375rem;
+  background-color: $primary-light;
+  border: $border-width-general;
+  overflow: hidden;
+  @include flexStartRow();
+  border-radius: 4px;
+
+  input {
+    flex: 1;
+    border: 0px solid $transparent !important;
+    outline: none !important;
+    padding: 0.188rem 0.313rem;
+    font-size: $fontsize-small1;
+    font-weight: 400;
+    color: $dark-text-primary;
+
+    &::placeholder {
+      color: $quinary-light;
+    }
+  }
+
+  &_btn {
+    width: 1.375rem;
+    height: 1.375rem;
+    color: $dark-text-primary;
+    @include flexCenter(row);
+    cursor: pointer;
+  }
+
+  &.dark {
+    background-color: $quinary-dark;
+    border: $border-width-general;
+
+    input {
+      border: 0px solid $transparent !important;
+      background-color: $transparent;
+      color: $light-text-primary;
+
+      &::placeholder {
+        color: $quinary-light;
+      }
+    }
+
+    .search_btn {
+      color: $quinary-light;
+    }
+  }
+}

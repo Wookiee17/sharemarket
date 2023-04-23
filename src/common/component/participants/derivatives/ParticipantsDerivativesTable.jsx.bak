@@ -1,0 +1,252 @@
+import React, { useRef, useMemo, useEffect, useState } from "react";
+import { AgGridReact, AgGridColumn } from "ag-grid-react";
+import { ModuleRegistry } from "ag-grid-community";
+import "ag-grid-enterprise";
+
+// redux
+import { useSelector } from "react-redux";
+import { useQuery } from "@apollo/client";
+import { GET_FII_DERIVATIVES } from "../../../../gql/queries";
+
+const ParticipantsDerivativesTable = ({
+  date,
+  setSelectedOption,
+  selectedOption,
+}) => {
+  const theme = useSelector((state) => state.Common.theme);
+  const gridRef = useRef(null);
+  const [mainData, setMainData] = useState([]);
+  const defaultColDef = useMemo(() => {
+    return {
+      sortable: true,
+      resizable: false,
+      suppressMenu: true,
+      sortIcon: true,
+      unSortIcon: true,
+    };
+  }, []);
+
+  const tableHeader = [
+    {
+      // headerName: "Type",
+      field: "type",
+      rowGroup: true,
+      hide: false,
+      // cellRenderer: "agGroupCellRenderer",
+    },
+    {
+      // headerName: "Instrumental",
+      field: "instrument_type",
+      rowGroup: true,
+      hide: false,
+      // cellRenderer: "agGroupCellRenderer",
+    },
+    {
+      headerName: "Date",
+      field: "priced_date",
+    },
+    {
+      headerName: "Long",
+      field: "long",
+    },
+    {
+      headerName: "Short",
+      field: "short",
+    },
+    {
+      headerName: "Total Diff.",
+      field: "total_diff",
+    },
+    {
+      headerName: "Change in Long.",
+      field: "change_in_long",
+    },
+    {
+      headerName: "Change in Short.",
+      field: "change_in_short",
+    },
+    {
+      headerName: "Change in Total.",
+      field: "change_in_total",
+    },
+    {
+      headerName: "Interpretation.",
+      field: "amount",
+    },
+  ];
+
+  const { data: fiiData, loading: fiiLoading } = useQuery(GET_FII_DERIVATIVES, {
+    variables: {
+      where: {
+        _and: [{ priced_date: { _eq: date } }, { client_type: { _eq: "FII" } }],
+      },
+    },
+    onCompleted: (data) => {
+      setSelectedOption(`FII_${data?.derivatives?.[0]?.instrument_type}`);
+    },
+  });
+
+  const { data: diiData, loading: diiLoading } = useQuery(GET_FII_DERIVATIVES, {
+    variables: {
+      where: {
+        _and: [{ priced_date: { _eq: date } }, { client_type: { _eq: "DII" } }],
+      },
+    },
+  });
+
+  const { data: proData, loading: proLoading } = useQuery(GET_FII_DERIVATIVES, {
+    variables: {
+      where: {
+        _and: [{ priced_date: { _eq: date } }, { client_type: { _eq: "Pro" } }],
+      },
+    },
+  });
+
+  const { data: clientData, loading: clientLoading } = useQuery(
+    GET_FII_DERIVATIVES,
+    {
+      variables: {
+        where: {
+          _and: [
+            { priced_date: { _eq: date } },
+            { client_type: { _eq: "Client" } },
+          ],
+        },
+      },
+    }
+  );
+
+  const dataFIIarr = [
+    fiiData?.derivatives?.map((d) => ({
+      ...d,
+      type: `FII`,
+    })),
+  ];
+
+  const dataPROarr = [
+    proData?.derivatives?.map((d) => ({
+      ...d,
+      type: `Pro`,
+    })),
+  ];
+
+  const dataDIIarr = [
+    diiData?.derivatives?.map((d) => ({
+      ...d,
+      type: `DII`,
+    })),
+  ];
+
+  const dataCLIENTarr = [
+    clientData?.derivatives?.map((d) => ({
+      ...d,
+      type: `Client`,
+    })),
+  ];
+
+  const loading = clientLoading || proLoading || diiLoading || fiiLoading;
+
+  useEffect(() => {
+    if (loading == false) {
+      setMainData([
+        ...dataFIIarr[0],
+        ...dataPROarr[0],
+        ...dataDIIarr[0],
+        ...dataCLIENTarr[0],
+      ]);
+    }
+  }, [loading]);
+  // console.log(mainData.length, "--", loading);
+
+  return (
+    <div
+      className={`ParticipantsDerivativeTable ${
+        theme == "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"
+      }`}
+    >
+      <AgGridReact
+        ref={gridRef}
+        // columnDefs={tableHeader}
+        rowData={mainData}
+        defaultColDef={defaultColDef}
+        groupDisplayType={"groupRows"}
+        onGridReady={(e) => {
+          gridRef.current.api.sizeColumnsToFit();
+        }}
+        autoGroupColumnDef={{
+          filterValueGetter: function (params) {
+            var colGettingGrouped = params.colDef.showRowGroup;
+            var valueForOtherCol = params.api.getValue(
+              colGettingGrouped,
+              params.node
+            );
+            return valueForOtherCol;
+          },
+        }}
+        // showOpenedGroup={false}
+        // rowSelection="single"
+        // isRowGroupDisplayed
+        // groupHideOpenParents={true}
+        groupDefaultExpanded={1}
+        suppressCellFocus
+      >
+        <AgGridColumn
+          headerName="Type"
+          columnGroupShow
+          width={200}
+          minWidth={200}
+        />
+        <AgGridColumn
+          field="type"
+          cellRenderer="agGroupCellRenderer"
+          rowGroup={true}
+          rowGroupIndex={0}
+          hide={true}
+          width={200}
+          minWidth={200}
+        />
+        <AgGridColumn
+          valueGetter="data.instrument_type"
+          // field="instrument_type"
+          cellRenderer="agGroupCellRenderer"
+          rowGroup={true}
+          rowGroupIndex={1}
+          hide={true}
+          width={200}
+          minWidth={200}
+        />
+        <AgGridColumn headerName="Date" field="priced_date" />
+        <AgGridColumn headerName="Long" field="long" />
+        <AgGridColumn headerName="Short" field="short" />
+        <AgGridColumn headerName="Total Diff." field="total_diff" />
+        <AgGridColumn headerName="Change in Long." field="change_in_long" />
+        <AgGridColumn headerName="Change in Short." field="change_in_short" />
+        <AgGridColumn headerName="Change in Total." field="change_in_total" />
+        <AgGridColumn
+          headerName="Interpretation"
+          field="Interpretation"
+          cellRenderer={(_, record) => {
+            console.log(record)
+            // if (record?.change_in_total) {
+            //   if (record?.instrument_type?.includes("Put")) {
+            //     if (record?.change_in_total > 0) {
+            //       return <div style={{ color: "#FF4A4A" }}>BEARISH</div>;
+            //     } else {
+            //       return <div style={{ color: "#52C41A" }}>BULLISH</div>;
+            //     }
+            //   } else {
+            //     if (record?.change_in_total < 0) {
+            //       return <div style={{ color: "#FF4A4A" }}>BEARISH</div>;
+            //     } else {
+            //       return <div style={{ color: "#52C41A" }}>BULLISH</div>;
+            //     }
+            //   }
+            // }
+          }}
+        />
+      </AgGridReact>
+    </div>
+  );
+};
+
+export default ParticipantsDerivativesTable;

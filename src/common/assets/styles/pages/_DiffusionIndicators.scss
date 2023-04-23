@@ -1,0 +1,249 @@
+.DiffusionIndicators {
+  width: 100%;
+  height: 100%;
+  @include flexStartRow();
+  align-items: flex-start;
+}
+
+.DiffusionIndicatorsSidebar {
+  width: 300px;
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-right: $border-width-general;
+
+  &.light {
+    background-color: $senary-light;
+  }
+
+  &.dark {
+    background-color: $secondary-dark;
+  }
+
+  .row {
+    @include flexStartRow();
+  }
+
+  &-header {
+    @include flexStartRow();
+    font-size: $fontsize-small1;
+    font-weight: 400;
+    padding: 1.25rem 0.625rem 0.5rem 0.625rem;
+    border-bottom: $border-width-general;
+
+    p {
+      flex: 1;
+      padding-right: 0.625rem;
+      color: $dark-text-muted !important;
+    }
+
+    .bt {
+      font-size: $fontsize-default;
+      font-weight: 400;
+      padding: 0 0 0 0.625rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $yellow-100;
+      }
+    }
+  }
+
+  &-body {
+    height: calc(100% - 65px);
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+  }
+}
+
+.DiffusionIndicatorsTree-item {
+  width: 100%;
+  margin-bottom: 0.063rem;
+
+  &.parent {
+    padding-left: 24px;
+  }
+
+  &_top {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0rem 0.313rem 0rem 0rem;
+    font-size: $fontsize-default;
+    font-weight: 400;
+    border: $border-width-transparent;
+    @include flexStartRow();
+    cursor: pointer;
+
+    &-title {
+      // padding-top: 0.188rem;
+      // padding-left: 0.188rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: calc(299px - 25px);
+    }
+
+    &.light {
+      background-color: $light-tree-item-bg;
+    }
+
+    &.dark {
+      background-color: $dark-tree-item-bg;
+    }
+
+    &:hover,
+    &.active {
+      background-color: $yellow-trans;
+      border: $border-width-type3;
+    }
+
+    &-left {
+      @include flexCenter(row);
+      font-size: $fontsize-large6;
+      font-weight: 400;
+    }
+
+    &-right {
+      flex: 1;
+      @include flexBetweenRow();
+      font-size: $fontsize-default;
+      font-weight: 400;
+
+      p {
+        padding-top: 0.188rem;
+        padding-left: 0.188rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(100% - 1px);
+      }
+
+      .badge {
+        font-size: $fontsize-small2;
+        font-weight: 600;
+        padding: 0 0.188rem;
+        background-color: $yellow-200;
+        text-transform: uppercase;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+      }
+
+      .bt {
+        cursor: pointer;
+        @include flexCenter(row);
+
+        &:hover {
+          color: $primary-light;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    padding: 0rem 0rem 0.063rem 1.25rem;
+    font-size: $fontsize-default;
+    font-weight: 400;
+    margin-top: 0.063rem;
+
+    &-item {
+      width: 100%;
+      height: 1.5rem;
+      padding: 0.063rem 0.25rem;
+      font-size: $fontsize-default;
+      font-weight: 400;
+      text-align: left;
+      cursor: pointer;
+      background-color: $transparent;
+      border: 0.25px solid $transparent;
+      outline: 0px !important;
+
+      &:hover {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+      }
+
+      &:active,
+      &:focus,
+      &.active {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+        box-shadow: $shadow-general;
+      }
+
+      p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(100% - 1px);
+      }
+    }
+  }
+}
+
+.DiffusionIndicatorsBody {
+  width: 100%;
+  height: calc(100vh - 170px);
+
+  &-header {
+    padding: 0.313rem 0.625rem;
+    // border-bottom: $border-width-general;
+
+    span {
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: $fontsize-large3;
+      font-weight: 500;
+    }
+  }
+
+  &-bottom {
+    @include flexCenter(column);
+    height: calc(100% - 35px);
+    // overflow: hidden;
+
+    &_tradingWidget {
+      width: 100%;
+      height: 100%;
+
+      .DiffusionIndicatorsChart {
+        height: 100%;
+      }
+    }
+
+    // &_chart {
+    //   width: 100%;
+    //   height: 60%;
+    // }
+  }
+}

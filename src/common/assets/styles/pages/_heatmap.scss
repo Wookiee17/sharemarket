@@ -1,0 +1,508 @@
+.Heatmap {
+  width: 100%;
+  height: 100%;
+
+  &_top {
+    padding: 0.625rem 0.625rem 1.25rem 0.938rem;
+    @include flexStartRow();
+
+    .left {
+      margin-right: 0.625rem;
+      .secondary_tabs-item {
+        flex: 0 0;
+        min-width: fit-content;
+        padding: 0rem 0.625rem;
+      }
+    }
+
+    .viewBy {
+      @include flexStartRow();
+      align-items: flex-start;
+      height: 1.875rem;
+
+      p {
+        font-size: $fontsize-small1;
+        font-weight: 400;
+        padding-right: 0.938rem;
+        opacity: 0.9;
+      }
+
+      &-slider {
+        width: 25rem;
+
+        .rc-slider-mark-text {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    width: 100%;
+    height: calc(100% - 60px);
+
+    .TabSection {
+      height: 100%;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+// .HeatmapAdvanceDecline {
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   flex-direction: column;
+
+//   &-top {
+//     @include flexStartRow();
+//     border-bottom: $border-width-general;
+//     width: 100%;
+
+//     .item {
+//       flex: 1;
+//       padding: 1rem;
+
+//       h5 {
+//         text-align: center;
+//         color: $senary-dark;
+//       }
+//     }
+//   }
+
+//   &-bottom {
+//     width: 100%;
+//     height: calc(100vh - 37rem);
+//     padding: 1rem;
+//   }
+// }
+
+.HeatmapFnO {
+  &-top {
+    @include flexStartRow();
+    padding: 0rem 0.625rem;
+    flex: 1;
+
+    &.left {
+      @include flexStartRow();
+      flex: 1;
+      border-right: 0px solid #0000 !important;
+
+      span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: $fontsize-small1;
+        cursor: pointer;
+        display: block;
+        text-transform: uppercase;
+        margin: 0rem 0.313rem;
+      }
+
+      .indicators {
+        width: 2.5rem;
+        height: 4.375rem;
+        margin: 0rem 0.063rem;
+        position: relative;
+        text-align: center;
+        @include flexCenter(column);
+        cursor: pointer;
+
+        .top {
+          font-weight: 600;
+          font-size: $fontsize-default;
+        }
+
+        .bar {
+          width: 100%;
+          height: 0.313rem;
+          // margin: 0.2rem 0rem;
+
+          &.active {
+            height: 0.938rem;
+          }
+        }
+
+        .percentage {
+          font-size: $fontsize-small1-1;
+          opacity: 0.6;
+
+          &.active {
+            margin-bottom: 0.625rem;
+          }
+        }
+      }
+    }
+
+    &.right {
+      @include flexStartRow();
+      justify-content: flex-end;
+      flex: 1;
+      border-right: 0px solid #0000 !important;
+    }
+  }
+
+  &-body {
+    height: calc(100vh - 300px);
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+  }
+
+  &-bottom {
+    @include flexStartRow();
+    justify-content: stretch;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    &.zoom {
+      &-1 {
+        .item {
+          width: 5.7%;
+          // width: 8rem;
+          font-size: $fontsize-small1;
+        }
+      }
+      &-2 {
+        .item {
+          width: 8.9%;
+          // width: 7.5rem;
+          font-size: $fontsize-small1-1;
+        }
+      }
+      &-3 {
+        .item {
+          width: 12.3%;
+          // width: 16rem;
+          font-size: $fontsize-default;
+        }
+      }
+      &-4 {
+        .item {
+          width: 14%;
+          // width: 20rem;
+        }
+      }
+      &-5 {
+        .item {
+          width: 16.5%;
+          // width: 24rem;
+        }
+      }
+      &-6 {
+        .item {
+          width: 24.7%;
+          // width: 28rem;
+        }
+      }
+      &-7 {
+        .item {
+          width: 33%;
+          // width: 30rem;
+        }
+      }
+    }
+
+    .item {
+      padding: 0.375rem;
+      margin: 0.063rem 0.063rem;
+      background-color: $quaternary-dark;
+      // width: 12.2%;
+      // height: 8rem;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      .name {
+        font-size: $fontsize-large1;
+        font-weight: 400;
+        margin-bottom: 0.625rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .percentage {
+        font-size: $fontsize-default;
+        font-weight: 400;
+        width: 100%;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .quantity {
+        font-size: $fontsize-default;
+        font-weight: 400;
+        width: 100%;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.btn-wrapper-chart {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  //box-shadow: $shadow-general;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  &.light {
+    background-color: $primary-light;
+    border: 2px solid $senary-light;
+  }
+
+  &.dark {
+    background-color: $primary-dark;
+    border: 2px solid $primary-dark;
+  }
+
+  .btn-zoom {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    @include flexCenter(row);
+
+    &:hover {
+      &.light {
+        background-color: $senary-light;
+      }
+      &.dark {
+        background-color: $secondary-dark;
+      }
+    }
+  }
+}
+
+.HeatmapAdvanceDecline {
+  width: 100%;
+  @include flexStartRow();
+  align-items: flex-start;
+
+  .row {
+    @include flexStartRow();
+  }
+
+  .right {
+    width: calc(100% - 300px);
+    height: calc(100vh - 225px);
+
+    .HeatmapAdvanceDeclineChart {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.HeatmapNSE {
+  width: 100%;
+  @include flexStartRow();
+  align-items: flex-start;
+
+  .row {
+    @include flexStartRow();
+  }
+
+  .right {
+    flex: 1;
+  }
+}
+
+.Heatmap_sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  border-right: $border-width-general;
+
+  &-header {
+    padding: 0.125rem 0.438rem;
+    // border-bottom: $border-width-general;
+    box-shadow: $shadow-sm;
+    @include flexBetweenRow();
+
+    p {
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+
+    .sort {
+      cursor: pointer;
+
+      small {
+        opacity: 0.5;
+        font-size: $fontsize-default;
+        font-weight: 400;
+      }
+
+      p {
+        padding: 0 0.313rem;
+        font-size: $fontsize-default;
+        font-weight: 400;
+      }
+    }
+
+    .bt {
+      cursor: pointer;
+      @include flexCenter(row);
+
+      &:hover {
+        color: $yellow-100;
+      }
+    }
+  }
+
+  &-body {
+    height: calc(100vh - 260px);
+    overflow-y: hidden;
+    position: relative;
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+
+      &.reverse {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  &-item {
+    padding: 0rem 0.438rem;
+    @include flexBetweenRow();
+    cursor: pointer;
+    outline: 0px !important;
+    width: 100%;
+    background-color: $transparent;
+    border: 0.25px solid $transparent;
+    border-bottom: $border-width-general;
+
+    &.light {
+      color: $dark-text-primary;
+      h4 {
+        color: $dark-text-primary;
+      }
+    }
+
+    &.dark {
+      color: $light-text-primary;
+      h4 {
+        color: $light-text-primary;
+      }
+    }
+
+    &:hover {
+      background-color: $yellow-trans;
+      border: $border-width-type3;
+    }
+
+    &:active,
+    &:focus,
+    &.active {
+      background-color: $yellow-trans;
+      border: $border-width-type3;
+      box-shadow: $shadow-general;
+    }
+
+    &.head {
+      font-size: $fontsize-default;
+      font-weight: 400;
+      padding: 0rem 0.438rem;
+      border-bottom: 0px;
+      position: sticky;
+      top: 0;
+
+      &.light {
+        background-color: $secondary-light;
+      }
+
+      &.dark {
+        background-color: $quaternary-dark;
+      }
+
+      .qnt {
+        opacity: 0.6;
+      }
+
+      .opt {
+        opacity: 0.6;
+      }
+    }
+
+    h4 {
+      font-size: $fontsize-default;
+      font-weight: 500;
+      flex: 1;
+      text-align: left;
+    }
+
+    .qnt {
+      width: 6.875rem;
+      text-align: right;
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+
+    .opt {
+      width: 1.875rem;
+      text-align: right;
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+  }
+}

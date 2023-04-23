@@ -1,0 +1,690 @@
+.help {
+  height: 100%;
+
+  &_top {
+    padding: 5px 7px;
+
+    .left {
+      width: 310px;
+    }
+  }
+
+  &_bottom {
+    height: calc(100% - 35px);
+
+    &.dark {
+      background-color: $secondary-dark;
+      border: 2px solid $primary-dark;
+    }
+
+    .demoVideo {
+      width: 100%;
+      height: 100%;
+      @include flexStartRow();
+
+      &-left {
+        width: 320px;
+        height: 100%;
+        padding: 10px 5px;
+        // border-right: $border-width-general;
+
+        &_inner {
+          padding: 10px 5px;
+
+          &-item {
+            width: 100%;
+            height: 150px;
+            margin-top: 6px;
+            overflow: hidden;
+            border-radius: $border-radius-default;
+            -webkit-border-radius: $border-radius-default;
+            -moz-border-radius: $border-radius-default;
+            -ms-border-radius: $border-radius-default;
+            -o-border-radius: $border-radius-default;
+            position: relative;
+            cursor: pointer;
+
+            &-overlay {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background-color: $video-overlay;
+
+              &-title {
+                padding: 5px;
+                width: 100%;
+                background-color: $secondary-dark;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                h5 {
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: $fontsize-large1;
+                  line-height: $fontsize-large2;
+                  text-transform: capitalize;
+                  color: $light-text-primary;
+                  margin-bottom: 3px;
+                  margin-top: 4px;
+                }
+
+                h6 {
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: $fontsize-default;
+                  line-height: $fontsize-large1;
+                  text-transform: capitalize;
+                  color: $light-text-muted;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-right {
+        flex: 1;
+        height: 100%;
+        padding: 0px 0px;
+
+        .videoPlayer {
+          width: 100%;
+          height: calc(100% - 80px);
+          box-shadow: $shadow-general;
+        }
+
+        .description {
+          padding: 10px 10px;
+
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: capitalize;
+            color: $light-text-primary;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .SystemUpdate {
+      height: 100%;
+
+      &_header {
+        @include flexStartRow();
+        border-bottom: $border-width-type5;
+        padding: 0.563rem;
+        width: 100%;
+        height: 45px;
+        padding: 10px 0px;
+
+        &-title {
+          font-weight: 400;
+          font-size: $fontsize-large1;
+          line-height: $fontsize-large5;
+          text-transform: uppercase;
+          padding-right: 10px;
+          padding-left: 10px;
+          border-right: $border-width-general;
+        }
+
+        &-sort {
+          padding-right: 10px;
+          padding-left: 10px;
+          border-right: $border-width-general;
+          width: 80px;
+          cursor: pointer;
+        }
+
+        &-search {
+          padding-right: 10px;
+          padding-left: 10px;
+          // border-right: $border-width-general;
+        }
+      }
+
+      &_table {
+        height: 100%;
+
+        .ag-header-cell-comp-wrapper {
+          border-left: $border-width-general;
+        }
+
+        .system_update_ag {
+          width: 99%;
+          min-height: fit-content;
+        }
+
+        .row {
+          border-bottom: $border-width-general;
+
+          .ag-cell {
+            border-right: none;
+          }
+
+          .ag-cell-value {
+            height: 100%;
+            // border-right: 1px solid rgba(116, 116, 116, 0.5019607843);
+            border-left: 1px solid rgba(116, 116, 116, 0.5019607843);
+          }
+        }
+      }
+    }
+
+    .RaiseTicket {
+      height: 100%;
+
+      .help-RaiseTicket-tab-indicator {
+        width: 5px;
+        height: 5px;
+        margin-right: 4px;
+        border-radius: $border-radius-lg;
+        -webkit-border-radius: $border-radius-lg;
+        -moz-border-radius: $border-radius-lg;
+        -ms-border-radius: $border-radius-lg;
+        -o-border-radius: $border-radius-lg;
+      }
+
+      &_header {
+        &-title {
+          @include flexStartRow();
+          border-bottom: $border-width-type5;
+          font-weight: 400;
+          font-size: $fontsize-large1;
+          line-height: $fontsize-large5;
+          text-transform: uppercase;
+          width: 100%;
+          height: 30px;
+          padding: 5px 10px;
+        }
+
+        &-filters {
+          @include flexStartRow();
+          padding: 0px 7px;
+
+          &_left {
+            @include flexStartRow();
+            flex: 1;
+          }
+
+          &_right {
+            @include flexStartRow();
+          }
+        }
+
+        &-sort {
+          padding-right: 10px;
+          padding-left: 10px;
+          border-right: $border-width-general;
+          width: 80px;
+          cursor: pointer;
+        }
+
+        &-search {
+          padding-right: 10px;
+          padding-left: 10px;
+          // border-right: $border-width-general;
+        }
+      }
+
+      &_body {
+        @include flexStartRow();
+        width: 100%;
+        height: calc(100% - 70px);
+
+        &-left {
+          width: 700px;
+          height: 100%;
+          overflow-y: auto;
+          
+          @supports (overflow-y: overlay) {
+            overflow-y: overlay;
+          }
+
+          &:hover {
+            overflow-y: auto;
+
+            @supports (overflow-y: overlay) {
+              overflow-y: overlay;
+            }
+          }
+
+          &::-webkit-scrollbar {
+            width: 4px;
+            height: 2px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: $transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgba(193, 193, 193, 0.8);
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background: rgba(193, 193, 193, 0.8);
+          }
+
+          .RaiseTicket_item {
+            background: $tertiary-dark;
+            box-shadow: $shadow-general;
+            padding: 10px;
+            position: relative;
+            margin-bottom: 2px;
+            cursor: pointer;
+
+            &.active {
+              background-color: $septenary-dark;
+              box-shadow: 0;
+
+              .RaiseTicket_item-number {
+                &-text {
+                  color: $yellow-100;
+                }
+              }
+
+              .RaiseTicket_item-subject {
+                color: $yellow-100;
+              }
+
+              .RaiseTicket_item-message {
+                color: $light-text-primary;
+              }
+            }
+
+            &-number {
+              @include flexStartRow();
+              margin-bottom: 5px;
+
+              &-text {
+                font-weight: 400;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large1;
+                text-transform: capitalize;
+                color: $light-text-primary;
+              }
+            }
+
+            &-subject {
+              font-weight: 400;
+              font-size: $fontsize-large2;
+              line-height: $fontsize-large3;
+              text-transform: capitalize;
+              color: $light-text-primary;
+              margin-bottom: 8px;
+            }
+
+            &-message {
+              font-weight: 400;
+              font-size: $fontsize-default;
+              line-height: $fontsize-large1;
+              color: $light-text-muted;
+              margin-bottom: 8px;
+            }
+
+            &-bottom {
+              @include flexStartRow();
+              width: 100%;
+
+              &_left {
+                @include flexStartRow();
+                flex: 1;
+
+                svg {
+                  font-size: $fontsize-large2;
+                  margin-right: 7px;
+                  color: $light-text-muted;
+                }
+
+                span {
+                  font-weight: 400;
+                  font-size: $fontsize-default;
+                  line-height: $fontsize-large1;
+                  color: $light-text-muted;
+                }
+              }
+
+              &_right {
+                font-weight: 400;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large1;
+                color: $light-text-muted;
+              }
+            }
+
+            &-delete {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              color: $light-text-tertiary;
+              cursor: pointer;
+
+              &:hover {
+                color: $yellow-200;
+              }
+            }
+          }
+        }
+
+        &-right {
+          flex: 1;
+          height: 100%;
+          // background-color: #ff0;
+        }
+      }
+
+      &_detail {
+        width: 100%;
+        height: 100%;
+        background-color: $septenary-dark;
+        overflow-y: hidden;
+
+        &:hover {
+          overflow-y: auto;
+
+          @supports (overflow-y: overlay) {
+            overflow-y: overlay;
+          }
+        }
+
+        &-header {
+          width: 100%;
+          padding: 10px 10px 10px 30px;
+          background-color: $secondary-dark;
+          box-shadow: $shadow-general;
+
+          &_main {
+            @include flexStartRow();
+            margin-bottom: 5px;
+
+            &-text {
+              font-weight: 500;
+              font-size: $fontsize-large3;
+              line-height: $fontsize-large5;
+              text-transform: capitalize;
+              color: $yellow-100;
+              margin-left: 5px;
+            }
+          }
+
+          &_sub {
+            @include flexStartRow();
+            justify-content: space-between;
+
+            &-text {
+              font-weight: 400;
+              font-size: $fontsize-large1;
+              line-height: $fontsize-large2;
+              text-transform: capitalize;
+              color: $yellow-100;
+            }
+
+            &-date {
+              @include flexStartRow();
+
+              svg {
+                margin-right: 7px;
+              }
+
+              span {
+                font-weight: 400;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large1;
+                color: $light-text-muted;
+              }
+            }
+          }
+        }
+
+        &-body {
+          padding: 10px 10px 10px 30px;
+          width: 100%;
+          height: calc(100% - 66px);
+          overflow-y: hidden;
+
+          &:hover {
+            overflow-y: auto;
+
+            @supports (overflow-y: overlay) {
+              overflow-y: overlay;
+            }
+          }
+
+          &::-webkit-scrollbar {
+            width: 4px;
+            height: 2px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: $transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgba(193, 193, 193, 0.8);
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background: rgba(193, 193, 193, 0.8);
+          }
+
+          p {
+            font-weight: 400;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            color: $light-text-primary;
+          }
+
+          &_row {
+            @include flexStartRow();
+            align-items: flex-start;
+            padding: 5px;
+
+            &-col {
+              &_sm {
+                width: 100px;
+              }
+
+              &_lg {
+                flex: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.commentbox {
+  width: 100%;
+  background-color: $secondary-dark;
+  border: $border-width-general;
+  border-radius: $border-radius-default;
+  -webkit-border-radius: $border-radius-default;
+  -moz-border-radius: $border-radius-default;
+  -ms-border-radius: $border-radius-default;
+  -o-border-radius: $border-radius-default;
+
+  .ant-upload-list {
+    display: none;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    color: $light-text-primary;
+    background-color: $secondary-dark;
+    border: 0px !important;
+    outline: none !important;
+    border-radius: $border-radius-default;
+    -webkit-border-radius: $border-radius-default;
+    -moz-border-radius: $border-radius-default;
+    -ms-border-radius: $border-radius-default;
+    -o-border-radius: $border-radius-default;
+  }
+
+  &_files {
+    &-list {
+      @include flexStartRow();
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding: 7px;
+    }
+
+    &-item {
+      @include flexStartRow();
+      padding: 5px;
+      margin: 5px 5px 5px 0px;
+      max-width: 250px;
+      background-color: $quaternary-dark;
+      overflow: hidden;
+      border: $border-width-general;
+      box-shadow: $shadow-general;
+      border-radius: $border-radius-default;
+      -webkit-border-radius: $border-radius-default;
+      -moz-border-radius: $border-radius-default;
+      -ms-border-radius: $border-radius-default;
+      -o-border-radius: $border-radius-default;
+
+      p {
+        // width: 184px;
+        flex: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .bt {
+        @include flexCenter(row);
+        width: 16px;
+        margin-left: 7px;
+        cursor: pointer;
+
+        &:hover {
+          color: $yellow-200;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    @include flexStartRow();
+    padding: 5px;
+
+    &-left {
+      @include flexStartRow();
+      flex: 1;
+
+      input[type="file"] {
+        display: none !important;
+      }
+
+      .bt {
+        padding: 3px 5px;
+        color: $light-text-muted;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          color: $light-text-primary;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+
+        .emojyPicker {
+          position: absolute;
+          top: 18px;
+          left: 0;
+        }
+      }
+    }
+
+    &-right {
+      @include flexStartRow();
+      justify-content: flex-end;
+      flex: 1;
+    }
+  }
+
+  &_list {
+  }
+
+  &_item {
+    padding: 10px 0px;
+    border-bottom: $border-width-general;
+
+    &_top {
+      @include flexStartRow();
+
+      &-img {
+        width: 18px;
+        height: 18px;
+        margin-right: 7px;
+        overflow: hidden;
+        border-radius: $border-radius-lg;
+        -webkit-border-radius: $border-radius-lg;
+        -moz-border-radius: $border-radius-lg;
+        -ms-border-radius: $border-radius-lg;
+        -o-border-radius: $border-radius-lg;
+      }
+
+      &-name {
+        font-weight: 600;
+        font-size: $fontsize-default;
+        line-height: $fontsize-large1;
+        margin-right: 5px;
+        color: $light-text-primary;
+      }
+
+      &-date {
+        font-weight: 400;
+        font-size: $fontsize-default;
+        line-height: $fontsize-large1;
+        text-transform: capitalize;
+        color: $light-text-muted;
+      }
+    }
+
+    &_msg {
+      padding: 5px 0px 5px 25px;
+      font-weight: 400;
+      font-size: $fontsize-default;
+      line-height: $fontsize-large1;
+      text-transform: lowercase;
+      color: $light-text-primary;
+    }
+
+    &_bottom {
+      @include flexStartRow();
+      justify-content: space-between;
+      padding: 0px 0px 0px 25px;
+
+      .bt {
+        padding: 0px;
+        color: $light-text-muted;
+        cursor: pointer;
+
+        &:hover {
+          color: $light-text-primary;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.625rem;
+  height: 3.125rem;
+  width: 100%;
+
+  &.light {
+    background-color: $primary-light;
+    color: $dark-text-primary;
+  }
+
+  &.dark {
+    background-color: $primary-dark;
+    color: $light-text-primary;
+  }
+
+  &_left {
+    @include flexStartRow();
+
+    .logo {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+
+      &_img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  } 
+
+  &_right {
+    @include flexStartRow();
+
+    .divider {
+      height: 1.875rem;
+      width: 1px;
+      background-color: #0002;
+      margin: 0rem 0.625rem;
+
+      &.dark {
+        background-color: #fff2;
+      }
+    }
+
+    .dt {
+      color: $dark-text-muted;
+      font-size: $fontsize-small1;
+      font-weight: 400;
+      padding: 0.313rem 0.625rem 0.313rem 0.313rem;
+
+      &.dark {
+        color: rgba(244, 244, 244, 0.5);
+      }
+    }
+  }
+}

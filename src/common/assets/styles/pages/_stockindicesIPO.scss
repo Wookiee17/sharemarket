@@ -1,0 +1,142 @@
+.stocksindices_layout {
+  //body
+  .indices_stocks_body {
+    width: 100%;
+    height: auto;
+    padding-top: 0.5rem;
+
+    //tab-1
+    .tab3 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .left {
+        flex-grow: 1;
+      }
+
+      .side {
+        flex-grow: 0;
+
+        .sider {
+          right: 0.3rem;
+          background-color: $nonary-dark;
+          height: 90vh;
+          width: 10px;
+          transition-duration: 0.5s;
+
+          .content {
+            display: none;
+
+            //heading
+            .heading {
+              padding: 0.7rem;
+              border-bottom: $border-width-general;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .left {
+                width: 40%;
+
+                img {
+                  width: 3rem;
+                }
+              }
+
+              .right {
+                width: 50%;
+                font-size: $fontsize-large6;
+                font-weight: 300;
+              }
+
+              .icon {
+                font-size: $fontsize-large1;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+              }
+            }
+
+            //main
+            .main {
+              padding: 0.7rem;
+
+              .time-stamp {
+                margin-bottom: 0.5rem;
+              }
+            }
+          }
+
+          &.active {
+            width: 450px;
+
+            .content {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .arrow {
+      position: relative;
+      left: -1rem;
+      top: 40%;
+      // margin-left: -1rem;
+      background-color: $octonary-dark;
+      display: flex;
+      padding: 1rem 0.3rem;
+      width: 2rem;
+
+      &.active {
+        top: 0;
+      }
+    }
+    //   height: 90vh;
+    .table {
+      height: 90vh;
+      width: 100%;
+      margin-right: 1rem;
+
+      .row_cls {
+        border-bottom: $border-width-general;
+      }
+    }
+    .ipoperformance {
+      min-height: 100%;
+      .table {
+        min-height: 100%;
+      }
+    }
+  }
+  .row_cls {
+    border-bottom: $border-width-general;
+  }
+}
+
+.top-tab3 {
+  display: flex;
+  gap: 0.5rem;
+
+  .tab-item {
+    background-color: $quinary-dark;
+    padding: 0.1rem 0.5rem;
+    box-sizing: border-box;
+    border-radius: $border-radius-default;
+    -webkit-border-radius: $border-radius-default;
+    -moz-border-radius: $border-radius-default;
+    -ms-border-radius: $border-radius-default;
+    -o-border-radius: $border-radius-default;
+    
+    &.active {
+      background-color: $blue-200;
+    }
+
+    &:hover {
+      background-color: $blue-200;
+      cursor: pointer;
+    }
+  }
+}

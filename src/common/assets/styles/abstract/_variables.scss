@@ -1,0 +1,127 @@
+// dark colors
+$dark-bg: #131722;
+$dark-top-tab-bg: #74747438;
+$dark-tab-body-bg: #131722;
+$dark-top-tab-item-bg: #21242f;
+$dark-tab-section-body: #21242f;
+$dark-sidebar-bg1: #2c2f3c;
+$dark-sidebar-bg2: #2a2c34;
+$dark-searchbar-border: #d9d9d9;
+$dark-searchabr-bg: #404040;
+$dark-drops: #353a48;
+$dark-secondary-tabs: #404040;
+$dark-sidebar-bg: #3b3f5166;
+$dark-tree-item-bg: #4040404d;
+
+// light colors
+$light-bg: #ffffff;
+$light-top-tab-bg: #bfd6ff17;
+$dark-tab-body-bg: #f2f2f2;
+$dark-top-tab-item-bg: #ffffff;
+$light-tab-section-body: #fcfcfc;
+$light-sidebar-bg1: #f6f6f6;
+$light-sidebar-bg2: #e2e5ec;
+$light-searchbar-border: #758696;
+$light-searchabr-bg: #ffffff;
+$light-drops: #f2f2f2;
+$light-secondary-tabs: #f2f2f2;
+$light-sidebar-bg: #c4c4c51a;
+$light-tree-item-bg: #9bb1ff1f;
+
+// neutral colors
+$primary-dark: #131722;
+$secondary-dark: #21242f;
+$tertiary-dark: #2c2f3c;
+$quaternary-dark: #353a48;
+$quinary-dark: #404040;
+$senary-dark: #747474;
+$septenary-dark: #262930;
+$octonary-dark: #323a46;
+$nonary-dark: #758696;
+$video-overlay: #3b3f5166;
+
+$dark-trnas-primary: #c9c9c94d;
+$dark-trans-secondary: rgba(217, 217, 217, 0.11);
+$dark-trans-tertiary: #bfd7ff1a;
+$dark-trans-quaternary: #bfd7ff2b;
+
+$primary-light: #ffffff;
+$secondary-light: #f2f2f2;
+$tertiary-light: #f6f6f6;
+$quaternary-light: #fcfcfc;
+$quinary-light: #d9d9d9;
+$senary-light: #e2e5ec;
+
+$red-100: #ff8991;
+$red-200: #ff4d4f;
+$red-300: #f9000f;
+$red-400: #d7000d;
+
+$blue-100: #788bff;
+$blue-200: #2b64f9;
+$blue-300: #235ae7;
+
+$yellow-100: #fcbf49;
+$yellow-200: #ff8a00;
+$yellow-trans: #ffb74a0f;
+
+$green-100: #b4d145;
+$green-200: #52c41a;
+$green-300: #3eac0e;
+$green-400: #098701;
+
+$table-header: #c7c6c61a;
+$table-header-solid-dark: #32343e;
+$table-header-solid-light: #f9f9f9;
+
+$transparent: #0000;
+
+// text colors
+$light-text-primary: #f4f4f4;
+$light-text-secondary: #d9d9d9;
+$light-text-muted: #f4f4f480;
+$light-text-tertiary: #758696;
+
+$dark-text-primary: #404040;
+$dark-text-secondary: #758696;
+$dark-text-muted: #404040;
+
+// borders
+$border-width-general: 0.25px solid #74747480;
+$border-width-type1: 0.25px solid #d9d9d9;
+$border-width-type2: 0.25px solid #3e4454;
+$border-width-type3: 0.25px solid #fcbf49;
+$border-width-type4: 0.25px solid #75869680;
+$border-width-type5: 0.25px solid #7474748f;
+$border-width-type6: 0.5px solid #d9d9d980;
+$border-width-type7: 0.5px solid #d9d9d915;
+$border-width-typeDark: 0.5px solid #d9d9d980;
+$border-width-transparent: 0.25px solid #13172200;
+$border-radius-default: 0.25rem;
+$border-radius-lg: 10rem;
+
+// shadow
+$shadow-general: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$shadow-sm: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+$shadow-dark-highlight: 0px 1px 10px 2px #d9d9d94d;
+
+// font size
+$fontsize-large12: 5.25rem; // 55px
+$fontsize-large11: 4.5rem; // 55px
+$fontsize-large10: 3.4375rem; // 55px
+$fontsize-large9: 2.625rem; // 42px
+$fontsize-large8: 2.125rem; // 34px
+$fontsize-large7: 1.625rem; // 26px
+$fontsize-large6: 1.5rem; // 24px
+$fontsize-large5: 1.375rem; // 22px
+$fontsize-large4: 1.25rem; // 20px
+$fontsize-large3: 1.125rem; // 18px
+$fontsize-large2: 1rem; // 16px
+$fontsize-large1: 0.875rem; // 14px
+$fontsize-default: 0.75rem; // 12px
+$fontsize-small1-1: 0.6875rem; // 11px
+$fontsize-small1: 0.625rem; // 10px
+$fontsize-small2: 0.5rem; // 8px
+
+// font family
+$fontfamily-primary: "Roboto", sans-serif;

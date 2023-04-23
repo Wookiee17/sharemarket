@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css?family=Unica+One);
+
+.highChartStyles {
+  &.dark {
+    // Chart background, point stroke for markers and columns etc
+    $background-color: $secondary-dark;
+
+    // Colors for data series and points.
+    $colors: #2b908f #90ee7e #f45b5b #7798bf #aaeeee #ff0066 #eeaaee #55bf3b
+      #df5353 #7798bf #aaeeee;
+
+    // Neutral colors
+    $neutral-color-100: $yellow-100;
+    $neutral-color-80: $light-text-primary;
+    $neutral-color-60: #e0e0e3;
+    $neutral-color-40: #666;
+    $neutral-color-20: #606063;
+    // $neutral-color-10: #74747480;
+    $neutral-color-10: #13172280;
+    $neutral-color-5: #505053;
+
+    // Colored, shades
+    $highlight-color-100: #0ff;
+    $highlight-color-60: rgba(255, 255, 255, 0.1);
+    $highlight-color-20: $neutral-color-10;
+
+    // Data-labels
+    $data-label-color: $light-text-primary;
+
+    // Fonts
+    $font-family: $fontfamily-primary;
+    $title-font-size: $fontsize-large2;
+
+    // Tooltip
+    $tooltip-background: rgba(0, 0, 0, 0.85);
+
+    // Range-selector
+    $range-selector-input-text: silver;
+    $range-selector-input-border: $neutral-color-5;
+
+    // Buttons
+    $highcharts-button-background: $neutral-color-5;
+    $highcharts-button-text: #ccc;
+
+    $highcharts-button-pressed-background: #000003;
+    $highcharts-button-pressed-text: $neutral-color-100;
+
+    $highcharts-button-hover-background: $neutral-color-10;
+    $highcharts-button-hover-text: $neutral-color-100;
+
+    $context-button-background: $neutral-color-5;
+
+    // Navigator
+    $navigator-series-fill: #7798bf;
+    $navigator-series-border: #a6c7ed;
+
+    // Navigator
+    $scrollbar-track-background: #404043;
+    $scrollbar-track-border: #404043;
+
+    // legend
+    .highcharts-legend-item > text {
+      fill: $neutral-color-80 !important;
+      font-weight: bold;
+      font-size: $fontsize-default;
+      cursor: pointer;
+      stroke-width: 0;
+    }
+    .highcharts-legend-item:hover text {
+      fill: $neutral-color-100 !important;
+    }
+
+    .highcharts-legend-nav-active {
+      fill: $highlight-color-100 !important;
+      cursor: pointer;
+    }
+    .highcharts-legend-nav-inactive {
+      fill: $neutral-color-20 !important;
+    }
+
+    // Titles
+    .highcharts-title,
+    .highcharts-subtitle {
+      text-transform: uppercase;
+    }
+
+    // Tooltip
+    .highcharts-tooltip text {
+      fill: #f0f0f0;
+    }
+
+    // Range-selector
+    .highcharts-range-selector-buttons text {
+      fill: silver;
+    }
+
+    // Axes
+    .highcharts-yaxis-grid {
+      stroke-width: 1px;
+    }
+
+    // .highcharts-axis-line {
+    //     fill: #f0f;
+    //     stroke-width: 1px;
+    // }
+
+    .highcharts-axis-labels {
+      fill: $neutral-color-60;
+      cursor: default;
+      font-size: $fontsize-small1;
+    }
+
+    // Navigator
+    .highcharts-navigator .highcharts-navigator-handle {
+      fill: $neutral-color-40;
+      stroke: #aaa;
+    }
+
+    .highcharts-navigator .highcharts-navigator-outline {
+      stroke: #ccc;
+    }
+
+    .highcharts-navigator .highcharts-navigator-xaxis .highcharts-grid-line {
+      stroke: $neutral-color-5;
+    }
+
+    // Scrollbar
+    .highcharts-scrollbar .highcharts-scrollbar-rifles {
+      stroke: $neutral-color-100;
+    }
+
+    .highcharts-scrollbar .highcharts-scrollbar-button {
+      stroke: #606063;
+      fill: #606063;
+    }
+
+    .highcharts-scrollbar .highcharts-scrollbar-arrow {
+      fill: #ccc;
+    }
+
+    .highcharts-scrollbar .highcharts-scrollbar-thumb {
+      fill: #808083;
+      stroke: #808083;
+    }
+
+    // Navigation
+    .highcharts-contextbutton .highcharts-button-symbol {
+      stroke: #dddddd;
+    }
+
+    // tooltip
+    // .highcharts-tooltip {
+    //   cursor: default;
+    //   pointer-events: none;
+    //   white-space: nowrap;
+    //   transition: stroke 150ms;
+    // }
+    .highcharts-tooltip text {
+      fill: $light-text-primary !important;
+    }
+    // .highcharts-tooltip .highcharts-header {
+    //   font-size: 0.85em;
+    // }
+    // .highcharts-tooltip-box {
+    //   stroke-width: $tooltip-border;
+    //   fill: $tooltip-background;
+    //   fill-opacity: 0.85;
+    // }
+    // .highcharts-tooltip-box .highcharts-label-box {
+    //   fill: $tooltip-background;
+    //   fill-opacity: 0.85;
+    // }
+    // div.highcharts-tooltip {
+    //   filter: none;
+    // }
+
+    //
+    .highcharts-root text {
+      fill: #7b7b7b;
+    }
+    .highcharts-root .highcharts-axis-labels {
+      fill: #e0e0e3 !important;
+    }
+    .highcharts-plot-line {
+      fill: #e0e0e3 !important;
+      stroke: #fff !important;
+    }
+
+    .highcharts-scrollbar .highcharts-scrollbar-thumb {
+      fill: #c1c1c1cc !important;
+      stroke: #c1c1c1cc !important;
+      stroke-width: 1px;
+      width: 4px;
+      /* margin-left: 10px; */
+      x: 15px;
+      rx: 25px;
+      ry: 4px;
+    }
+    .highcharts-scrollbar .highcharts-scrollbar-button {
+      fill: #21242f !important;
+      stroke: #21242f !important;
+      stroke-width: 1px;
+    }
+    .highcharts-scrollbar .highcharts-scrollbar-arrow {
+      fill: #21242f !important;
+    }
+    .highcharts-scrollbar .highcharts-scrollbar-rifles {
+      stroke: #21242f !important;
+      stroke-width: 1px;
+    }
+    .highcharts-scrollbar .highcharts-scrollbar-track {
+      fill: #21242f !important;
+      stroke: #21242f !important;
+      width: 4px;
+    }
+
+    @import "~highcharts/css/highcharts";
+  }
+}

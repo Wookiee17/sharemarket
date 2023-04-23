@@ -1,0 +1,64 @@
+import React, { useState, useEffect } from "react";
+
+// icons
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+
+// component
+import HeatmapSidebarItem from "./HeatmapSidebarItem";
+
+// redux
+import { useSelector } from "react-redux";
+
+//
+
+const HeatmapSidebar = ({ setIndicesId, indicesData }) => {
+  const theme = useSelector((state) => state.Common.theme);
+  const [reverse, setReverse] = useState(false);
+
+  return (
+    <div className={`Heatmap_sidebar ${theme}`}>
+      <div className={`Heatmap_sidebar-header ${theme}`}>
+        <p>INDICES</p>
+        <div className="sort row" onClick={() => setReverse(!reverse)}>
+          <small>Show By:</small>
+          <p>
+            {reverse ? (
+              <>
+                <span>Low to High</span>
+                <FiChevronUp />
+              </>
+            ) : (
+              <>
+                <span>High to Low</span>
+                <FiChevronDown />
+              </>
+            )}
+          </p>
+        </div>
+      </div>
+      <div className={`Heatmap_sidebar-body ${theme}`}>
+        <div className={`Heatmap_sidebar-item head ${theme}`}>
+          <h4></h4>
+          <div className="qnt">Price</div>
+          <div className="opt">%</div>
+        </div>
+        <div className={`Heatmap_sidebar-body-inner ${reverse && "reverse"}`}>
+          {indicesData?.indices?.map((item, i) => (
+            <React.Fragment key={i}>
+              <div onClick={() => setIndicesId(item?.id)}>
+                <HeatmapSidebarItem
+                  setIndicesId={setIndicesId}
+                  positive={i % 2}
+                  name={item.name}
+                  id={item.id}
+                />
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HeatmapSidebar;

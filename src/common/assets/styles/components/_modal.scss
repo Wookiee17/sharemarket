@@ -1,0 +1,26 @@
+.Modal {
+  border-radius: 2px;
+
+  .ant-modal-content {
+    background-color: $senary-light;
+    color: $blue-300;
+
+    .ant-modal-header {
+      background-color: $senary-light;
+      border-bottom : $senary-light;
+      
+      .ant-modal-title {
+        color: $blue-300;
+      }
+    }
+
+    .ant-modal-footer {
+      border-top : $senary-light;
+    }
+  }
+
+  .selected-plan {
+    border: 2px solid green;
+  }
+
+}

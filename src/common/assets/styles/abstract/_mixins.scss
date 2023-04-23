@@ -1,0 +1,193 @@
+/* mixins css */
+
+// clearfix for floated elemments
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// absolute center
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// absolute
+@mixin absTopLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// absolute
+@mixin absTopRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+// absolute
+@mixin absTopL($number) {
+  position: absolute;
+  top: 0;
+  left: $number;
+}
+
+// absolute
+@mixin absTopR($number) {
+  position: absolute;
+  top: 0;
+  right: $number;
+}
+
+// absolute
+@mixin absLeftT($number) {
+  position: absolute;
+  left: 0;
+  top: $number;
+}
+
+// absolute
+@mixin absRightT($number) {
+  position: absolute;
+  right: 0;
+  top: $number;
+}
+//
+// absolute
+@mixin absBottomLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+// absolute
+@mixin absBottomRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// absolute
+@mixin absBottomL($number) {
+  position: absolute;
+  bottom: 0;
+  left: $number;
+}
+
+// absolute
+@mixin absBottomR($number) {
+  position: absolute;
+  bottom: 0;
+  right: $number;
+}
+
+// absolute
+@mixin absLeftB($number) {
+  position: absolute;
+  left: 0;
+  bottom: $number;
+}
+
+// absolute
+@mixin absRightB($number) {
+  position: absolute;
+  right: 0;
+  bottom: $number;
+}
+
+// flex center
+@mixin flexCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+// flex start
+@mixin flexStartRow() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+@mixin flexStartColumn() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+// flex Space Between
+@mixin flexBetweenRow() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* MEDIA QUERY MANAGER */
+/*
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape
+  [1200 - 1800] is where our normal styles apply
+  1800px + :      Big desktop
+  $breakpoint arguement choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+  ORDER: Base + typography > general layout + grid > page layout > components
+  1em = 16px
+*/
+@mixin res($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-sm {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab {
+    @media only screen and (max-width: 834px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-lg {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desk-sm {
+    @media only screen and (max-width: 1300px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desk {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desk-lg {
+    @media only screen and (min-width: 1441px) {
+      @content;
+    }
+  }
+}
+
+// custome responsive mixin
+@mixin cusResponsive($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}

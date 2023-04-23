@@ -1,0 +1,116 @@
+.dropDownCheckBox {
+  width: 8.125rem;
+  cursor: pointer;
+  position: relative;
+
+  &_top {
+    @include flexCenter(row);
+    justify-content: space-between;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+
+    &.light {
+      color: $dark-text-primary;
+      // background-color: $primary-light;
+      // border: $border-width-type1;
+    }
+
+    &.dark {
+      color: $light-text-primary;
+      // background-color: $primary-dark;
+      // border: $border-width-type2;
+    }
+
+    p {
+      margin: 0rem 0.7rem;
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+  }
+
+  &_menu {
+    width: 150%;
+    padding: 0rem 0.7rem;
+    background-color: $secondary-light;
+    box-shadow: $shadow-general;
+    border: $border-width-general;
+    position: absolute;
+    z-index: 99;
+    border-radius: 1px;
+
+    &.dark {
+      background-color: $quaternary-dark;
+      border: $border-width-general;
+      .ant-checkbox-wrapper {
+        color: $light-bg;
+      }
+    }
+
+    &-options {
+      width: 100%;
+      @include flexStartRow();
+      justify-content: flex-end;
+      border-bottom: $border-width-general;
+      font-size: $fontsize-large2;
+      font-weight: 400;
+
+      div {
+        padding: 0.313rem;
+      }
+    }
+
+    &-body {
+      max-height: 150px;
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: auto;
+
+        @supports (overflow-y: overlay) {
+          overflow-y: overlay;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(193, 193, 193, 0.8);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(193, 193, 193, 0.8);
+      }
+    }
+
+    &-item {
+      // border-bottom: $border-width-general;
+      padding: 0.313rem 0rem;
+      font-size: $fontsize-default;
+      font-weight: 400;
+      color: $dark-text-primary;
+
+      &.dark {
+        // border-bottom: $border-width-general;
+        color: $light-text-primary;
+
+        .ant-checkbox-wrapper {
+          color: $primary-light;
+        }
+      }
+    }
+  }
+}
+
+// <label class="ant-checkbox-wrapper ant-checkbox-group-item"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="1"><span class="ant-checkbox-inner"></span></span><span>0-500 cr</span></label>

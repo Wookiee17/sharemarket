@@ -1,0 +1,150 @@
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import annotationPlugin from "chartjs-plugin-annotation";
+import zoomPlugin from "chartjs-plugin-zoom";
+import moment from "moment/moment";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  annotationPlugin,
+  zoomPlugin
+);
+
+const SentimentIndicatorsChart = ({
+  chartData = [],
+  overboughtMin = 0,
+  overboughtMax = 0,
+  undersoldMin = 0,
+  undersoldMax = 0,
+}) => {
+  const chartRef = useRef(null);
+  const [data, setData] = useState({
+    labels: [],
+    datasets: [],
+  });
+  const options = {
+    responsive: true,
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
+    stacked: false,
+    plugins: {
+      title: {
+        display: false,
+      },
+      legend: {
+        display: false,
+        position: "bottom",
+      },
+      annotation: {
+        annotations: {
+          overboughtLine: {
+            type: "line",
+            yMin: overboughtMin,
+            yMax: overboughtMax,
+            borderColor: "#fcbf49",
+            borderWidth: 2,
+            borderDash: [10],
+          },
+          undersoldLine: {
+            type: "line",
+            yMin: undersoldMin,
+            yMax: undersoldMax,
+            borderColor: "#fcbf49",
+            borderWidth: 2,
+            borderDash: [10],
+          },
+        },
+      },
+      zoom: {
+        limits: {
+          y: {min: 0, max: 100},
+        },
+        pan: {
+          enabled: true,
+          mode: "xy",
+        },
+        zoom: {
+          wheel: {
+            enabled: true,
+            speed: 0.01,
+          },
+          pinch: {
+            enabled: false,
+          },
+          mode: "xy",
+          onZoomComplete: (value) => {
+            console.log(value)
+          }
+        },
+      },
+    },
+    scales: {
+      y: {
+        type: "linear",
+        display: true,
+        position: "right",
+        ticks: {
+          stepSize: 8, // this worked as expected
+        },
+      },
+      x: {
+        ticks: {
+          autoSkip: true,
+          maxTicksLimit: 12,
+          callback: function (val, index) {
+            const date = this.getLabelForValue(val); //x-axis for line and bar charts, uses the index as internal data format. For accessing the label, use this.getLabelForValue(value)
+            return moment(date).format("Do MMM");
+          },
+        },
+      },
+    },
+  };
+
+  useEffect(() => {
+    setData({
+      labels: chartData.map((d) => d.date),
+      datasets: [
+        {
+          label: "Daily Swing",
+          data: chartData.map((d) => d.value),
+          borderColor: "#1890ff",
+          backgroundColor: "#1890ff",
+          yAxisID: "y",
+          pointRadius: 1,
+        },
+      ],
+    });
+  }, [chartData]);
+  return (
+    <>
+      <Line options={options} data={data} height={90} ref={chartRef} />
+      <button
+        className="Button primary md dark notRounded fill"
+        style={{ margin: "auto" }}
+        onClick={() => chartRef.current.resetZoom()}
+      >
+        Reset Zoom
+      </button>
+    </>
+  );
+};
+
+export default SentimentIndicatorsChart;

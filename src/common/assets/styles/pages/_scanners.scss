@@ -1,0 +1,298 @@
+.Scanners {
+  width: 100%;
+  height: calc(100% - 2px);
+  @include flexStartRow();
+  align-items: flex-start;
+}
+
+.Scanner_tree {
+  width: 15.625rem;
+  height: inherit;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-right: $border-width-general;
+
+  &.light {
+    background-color: $senary-light;
+    color: $dark-text-primary;
+  }
+
+  &.dark {
+    background-color: $secondary-dark;
+    color: $light-text-primary;
+  }
+
+  &-header {
+    padding: 0.063rem 0.438rem;
+    border-bottom: $border-width-general;
+    @include flexBetweenRow();
+
+    p {
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+
+    .btn {
+      cursor: pointer;
+
+      &:hover {
+        color: $blue-300;
+      }
+    }
+  }
+
+  &-body {
+    width: 100%;
+    height: 100%;
+    padding: 0.188rem;
+    height: calc(100% - 30px);
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+  }
+}
+
+.Scanner_tree-item {
+  width: 100%;
+  margin-bottom: 0.063rem;
+
+  &_top {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0rem 0.313rem 0rem 0rem;
+    border: 0.25px solid $transparent;
+    font-size: $fontsize-default;
+    font-weight: 400;
+    @include flexStartRow();
+    cursor: pointer;
+
+    &.light {
+      background-color: $light-tree-item-bg;
+    }
+
+    &.dark {
+      background-color: $dark-tree-item-bg;
+    }
+
+    &:hover {
+      background-color: $yellow-trans;
+      border: $border-width-type3;
+    }
+
+    &-left {
+      @include flexCenter(row);
+      font-size: $fontsize-large6;
+      font-weight: 400;
+    }
+
+    &-right {
+      flex: 1;
+      font-size: $fontsize-default;
+      font-weight: 400;
+      @include flexBetweenRow();
+
+      p {
+        padding-top: 0.188rem;
+        padding-left: 0.188rem;
+      }
+
+      .badge {
+        font-size: $fontsize-small2;
+        font-weight: 600;
+        padding: 0 0.188rem;
+        background-color: $yellow-200;
+        text-transform: uppercase;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+      }
+
+      .bt {
+        cursor: pointer;
+        @include flexCenter(row);
+
+        &:hover {
+          color: $yellow-100;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    padding: 0rem 0rem 0.063rem 1.25rem;
+    font-size: $fontsize-default;
+    font-weight: 400;
+
+    &-item {
+      width: 100%;
+      height: 1.375rem;
+      padding: 0.063rem 0.375rem;
+      font-size: $fontsize-default;
+      font-weight: 400;
+      text-align: left;
+      cursor: pointer;
+      background-color: $transparent;
+      border: 0.25px solid $transparent;
+      outline: 0px !important;
+
+      &:hover {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+      }
+
+      &:active,
+      &:focus,
+      &.active {
+        background-color: $yellow-trans;
+        border: $border-width-type3;
+        box-shadow: $shadow-general;
+      }
+    }
+  }
+}
+
+.ScannersTable {
+  background-color: $primary-light;
+  color: $dark-text-primary;
+  border-right: $border-width-general;
+  width: 40rem;
+  height: inherit;
+
+  &.dark {
+    background-color: $secondary-dark;
+    color: $light-text-primary;
+    border-right: $border-width-general;
+  }
+
+  &-header {
+    padding: 0.063rem 0.438rem;
+    border-bottom: $border-width-general;
+    @include flexBetweenRow();
+
+    p {
+      font-size: $fontsize-default;
+      font-weight: 400;
+    }
+  }
+
+  &-filter {
+    padding: 4px 0rem;
+    @include flexStartRow();
+
+    .item {
+      padding: 0rem 0.313rem;
+    }
+
+    &_selected {
+      @include flexStartRow();
+      height: 1.563rem;
+      padding: 0.188rem 0.313rem;
+      border-bottom: $border-width-general;
+
+      &.light {
+        background-color: $secondary-light;
+      }
+
+      &.dark {
+        background-color: $table-header;
+      }
+
+      p {
+        font-size: $fontsize-small2;
+        font-weight: 300;
+        opacity: 0.5;
+        margin-right: 0.5rem;
+      }
+
+      &_list {
+        @include flexStartRow();
+        overflow-x: scroll;
+        max-width: 100%;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        &-item {
+          @include flexStartRow();
+          background-color: rgba(217, 217, 217, 0.1);
+          padding-left: 0.313rem;
+          margin-right: 0.313rem;
+          min-width: fit-content;
+          // flex-wrap: nowrap;
+
+          span {
+            font-size: $fontsize-small1-1;
+            font-weight: 400;
+            margin-right: 0.313rem;
+          }
+
+          .close {
+            margin-top: 0.125rem;
+            cursor: pointer;
+
+            &:hover {
+              color: $yellow-100;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ScannersTable-table {
+  height: calc(100% - 80px);
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: auto;
+
+    @supports (overflow-y: overlay) {
+      overflow-y: overlay;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(193, 193, 193, 0.8);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(193, 193, 193, 0.8);
+  }
+}

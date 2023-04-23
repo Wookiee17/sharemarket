@@ -1,0 +1,463 @@
+.webinar {
+  width: 100%;
+  height: 100%;
+  @include flexStartRow();
+
+  &.dark {
+    background-color: $secondary-dark;
+    border: 2px solid $primary-dark;
+  }
+
+  &-left {
+    width: 314px;
+    height: 100%;
+    padding: 0px 5px 10px;
+    // background-color: #f002;
+    // border-right: $border-width-general;
+
+    &_tabs {
+      border-bottom: $border-width-general;
+    }
+
+    &_search {
+      padding: 10px 0px;
+    }
+
+    &_inner {
+      padding: 5px 5px;
+      height: calc(100% - 85px);
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: auto;
+
+        @supports (overflow-y: overlay) {
+          overflow-y: overlay;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(193, 193, 193, 0.8);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(193, 193, 193, 0.8);
+      }
+
+      .item {
+        width: 100%;
+        height: 160px;
+        margin-bottom: 4px;
+        overflow: hidden;
+        border-radius: $border-radius-default;
+        -webkit-border-radius: $border-radius-default;
+        -moz-border-radius: $border-radius-default;
+        -ms-border-radius: $border-radius-default;
+        -o-border-radius: $border-radius-default;
+        position: relative;
+        cursor: pointer;
+
+        &-bg {
+          width: 100%;
+          height: 100%;
+
+          .ImageRes-container {
+            img {
+              object-fit: cover;
+              height: 100% !important;
+              opacity: 0.5 !important;
+            }
+          }
+        }
+
+        &-overlay {
+          width: 100%;
+          height: 100%;
+          padding: 10px 7px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: $video-overlay;
+
+          &-revision {
+            text-align: right;
+          }
+
+          &-pp {
+            width: 35px;
+            height: 35px;
+            border-radius: $border-radius-lg;
+            -webkit-border-radius: $border-radius-lg;
+            -moz-border-radius: $border-radius-lg;
+            -ms-border-radius: $border-radius-lg;
+            -o-border-radius: $border-radius-lg;
+            overflow: hidden;
+          }
+
+          &-title {
+            font-weight: 700;
+            font-size: $fontsize-large2;
+            line-height: $fontsize-large4;
+            text-transform: capitalize;
+            margin-top: 10px;
+          }
+
+          &-sub {
+            font-style: normal;
+            font-weight: 300;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: capitalize;
+            margin-top: 3px;
+          }
+
+          &-date {
+            margin-top: 3px;
+            font-weight: 300;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: capitalize;
+            color: $yellow-100;
+          }
+
+          &-bottom {
+            @include flexStartRow();
+            justify-content: space-between;
+            margin-top: 10px;
+
+            &_left {
+              width: 30px;
+              height: 30px;
+            }
+
+            &_right {
+              @include flexStartRow();
+
+              &-duration {
+                margin-right: 5px;
+                padding: 3px 7px;
+                background: #0005;
+                font-weight: 400;
+                font-size: $fontsize-default;
+                line-height: $fontsize-large1;
+                text-transform: capitalize;
+                border-radius: $border-radius-default;
+                -webkit-border-radius: $border-radius-default;
+                -moz-border-radius: $border-radius-default;
+                -ms-border-radius: $border-radius-default;
+                -o-border-radius: $border-radius-default;
+              }
+
+              &-tag {
+                // background: #ffb74a;
+                // border: 1px solid #ffb74a;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                // transform: rotate(-180deg);
+                margin-right: -10px;
+                padding: 3px 10px;
+
+                &-img {
+                  margin-right: -20px;
+                  height: 10px;
+                  width: 70px;
+                }
+
+                p {
+                  font-weight: 500;
+                  font-size: $fontsize-small1-1;
+                  line-height: $fontsize-large1;
+                  text-transform: capitalize;
+                  color: $dark-text-primary;
+                  text-align: right;
+                  margin-top: -5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-right {
+    flex: 1;
+    height: 100%;
+    padding: 0px 0px;
+
+    .videoPlayer {
+      width: 100%;
+      height: calc(100% - 150px);
+      box-shadow: $shadow-general;
+      position: relative;
+
+      &-bg {
+        width: 100%;
+        height: 100%;
+
+        .ImageRes-container {
+          img {
+            object-fit: cover;
+            height: 100% !important;
+            opacity: 0.5 !important;
+          }
+        }
+      }
+
+      &-overlay {
+        @include flexCenter(column);
+        width: 100%;
+        height: 100%;
+        padding: 10px 7px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $video-overlay;
+
+        &:hover {
+          .playbtn {
+            opacity: 1;
+            transition: 0.4s;
+            -webkit-transition: 0.4s;
+            -moz-transition: 0.4s;
+            -ms-transition: 0.4s;
+            -o-transition: 0.4s;
+          }
+        }
+
+        .playbtn {
+          @include flexCenter(row);
+          width: 194px;
+          height: 145px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transition: 0.4s;
+          -webkit-transition: 0.4s;
+          -moz-transition: 0.4s;
+          -ms-transition: 0.4s;
+          -o-transition: 0.4s;
+          box-shadow: $shadow-general;
+          box-shadow: 2px 10px 75px 176px rgb(0, 0, 0, 15%);
+          opacity: 0;
+          background: $primary-light;
+          border-radius: $border-radius-lg;
+          -webkit-border-radius: $border-radius-lg;
+          -moz-border-radius: $border-radius-lg;
+          -ms-border-radius: $border-radius-lg;
+          -o-border-radius: $border-radius-lg;
+          cursor: pointer;
+
+          svg {
+            width: 200px;
+            height: 195px;
+            color: $red-200;
+          }
+        }
+
+        .detailDescription {
+          width: 80%;
+          @include flexStartRow();
+
+          .pp {
+            width: 200px;
+            margin-right: 10px;
+            overflow: hidden;
+            border-radius: $border-radius-lg;
+            -webkit-border-radius: $border-radius-lg;
+            -moz-border-radius: $border-radius-lg;
+            -ms-border-radius: $border-radius-lg;
+            -o-border-radius: $border-radius-lg;
+          }
+
+          .details {
+            .subText {
+              font-weight: 400;
+              font-size: $fontsize-large2;
+              line-height: $fontsize-large3;
+
+              span {
+                font-size: $fontsize-small2;
+                font-weight: 600;
+                padding: 0 0.188rem;
+                background-color: $yellow-200;
+                text-transform: uppercase;
+                margin-left: 0.25rem;
+                margin-top: -0.5rem;
+                border-radius: $border-radius-default;
+                -webkit-border-radius: $border-radius-default;
+                -moz-border-radius: $border-radius-default;
+                -ms-border-radius: $border-radius-default;
+                -o-border-radius: $border-radius-default;
+              }
+            }
+
+            .joinText {
+              font-weight: 300;
+              font-size: $fontsize-large9;
+              line-height: $fontsize-large10;
+              text-transform: capitalize;
+            }
+
+            .header {
+              @include flexStartRow();
+
+              .headerText {
+                font-weight: 600;
+                font-size: $fontsize-large11;
+                line-height: $fontsize-large12;
+                text-transform: capitalize;
+                margin-right: 10px;
+              }
+
+              .tag {
+                // background: #ffb74a;
+                // border: 1px solid #ffb74a;
+                box-shadow: $shadow-general;
+                transform: rotate(-180deg);
+                margin-right: -10px;
+                padding: 3px 10px;
+                margin-top: -25px;
+
+                &-img {
+                  margin-right: -20px;
+                  height: 50px;
+                  width: 150px;
+                }
+
+                p {
+                  font-weight: 300;
+                  font-size: $fontsize-large4;
+                  line-height: $fontsize-large6;
+                  text-transform: capitalize;
+                  color: $dark-text-primary;
+                  text-align: left;
+                  margin-top: -38px;
+                  transform: rotate(-180deg);
+                }
+              }
+            }
+            .detailsBottom {
+              @include flexStartRow();
+              .date {
+                font-weight: 300;
+                font-size: $fontsize-large7;
+                line-height: $fontsize-large8;
+                text-transform: capitalize;
+                margin-right: 100px;
+              }
+              .duration {
+                font-weight: 400;
+                font-size: $fontsize-large7;
+                line-height: $fontsize-large8;
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+
+        .subscription {
+          @include flexStartRow();
+          align-items: flex-end;
+          position: absolute;
+          bottom: 15px;
+          right: 15px;
+          background: rgba(255, 138, 0, 0.3);
+          box-shadow: $shadow-general;
+          border-radius: $border-width-general;
+          -webkit-border-radius: $border-width-general;
+          -moz-border-radius: $border-width-general;
+          -ms-border-radius: $border-width-general;
+          -o-border-radius: $border-width-general;
+          cursor: pointer;
+
+          .left {
+            flex: 1;
+            padding: 10px;
+            font-weight: 300;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: capitalize;
+          }
+          .right {
+            @include flexStartRow();
+            width: 115px;
+            height: 60px;
+            margin-left: 5px;
+            background: rgba(255, 138, 0, 0.5);
+            box-shadow: $shadow-general;
+            padding: 10px;
+            font-weight: 400;
+            font-size: $fontsize-default;
+            line-height: $fontsize-large1;
+            text-transform: capitalize;
+            border-radius: $border-radius-default;
+            -webkit-border-radius: $border-radius-default;
+            -moz-border-radius: $border-radius-default;
+            -ms-border-radius: $border-radius-default;
+            -o-border-radius: $border-radius-default;
+
+            svg {
+              color: $yellow-100;
+              width: 18px;
+              height: 18px;
+              flex-shrink: 0;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .description {
+      padding: 10px 10px;
+
+      h4 {
+        font-weight: 300;
+        font-size: $fontsize-large6;
+        line-height: $fontsize-large7;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: $fontsize-large2;
+        line-height: $fontsize-large3;
+        color: $light-text-primary;
+        margin-bottom: 5px;
+      }
+
+      .social {
+        @include flexStartRow();
+        margin-top: 10px;
+
+        &-item {
+          font-size: $fontsize-large2;
+          margin-right: 5px;
+          cursor: pointer;
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}

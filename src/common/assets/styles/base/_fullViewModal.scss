@@ -1,0 +1,30 @@
+.FullView_Modal {
+  position: absolute;
+  top: 0rem; //0px
+  left: 0.125rem; //2px
+  right: 0.125rem; //2px
+  bottom: 1.875rem; //30px
+
+  &.light {
+    background-color: $primary-light;
+    color: $dark-text-primary;
+  }
+
+  &.dark {
+    background-color: $secondary-dark;
+    color: $light-text-primary;
+  }
+}
+
+.FullView_Modal_Overlay {
+  position: fixed;
+  top: 5.75rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff00;
+
+  &.v2 {
+    top: 150px;
+  }
+}

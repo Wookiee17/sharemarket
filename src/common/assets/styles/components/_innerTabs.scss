@@ -1,0 +1,74 @@
+.innerTabs {
+  @include flexStartRow();
+  width: fit-content;
+  padding: 7px 0px;
+
+  &-item {
+    @include flexCenter(row);
+    font-size: $fontsize-default;
+    font-weight: 400;
+    color: $dark-text-primary;
+    background-color: $secondary-light;
+    padding: 0px 6px;
+    height: 1.5rem;
+    //flex: 1;
+    cursor: pointer;
+    margin: 0px 2.5px;
+    position: relative;
+    border: $border-width-type1;
+    box-shadow: $shadow-general;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    //border-top: 0px solid $transparent;
+
+    &.focused {
+      background-color: $blue-300 !important;
+      box-shadow: $shadow-general;
+      color: $light-text-primary !important;
+      border: $border-width-general !important;
+      border-top: 0px solid $transparent !important;
+
+      &:hover {
+        color: $light-text-primary;
+      }
+    }
+
+    &:hover {
+      background-color: $yellow-trans;
+      box-shadow: $shadow-general;
+      color: $dark-text-primary;
+      border: $border-width-type3;
+    }
+  }
+
+  &.dark {
+    .innerTabs-item {
+      color: $light-text-primary;
+      background-color: $quinary-dark;
+      position: relative;
+      border: $border-width-general;
+
+      &.focused {
+        background-color: $blue-300 !important;
+        box-shadow: $shadow-general;
+        color: $light-text-primary !important;
+        border: $border-width-general !important;
+        border-top: 0px solid $transparent !important;
+
+        &:hover {
+          color: $light-text-primary;
+        }
+      }
+
+      &:hover {
+        background-color: $yellow-trans;
+        box-shadow: $shadow-general;
+        color: $light-text-primary;
+        border: $border-width-type3;
+      }
+    }
+  }
+}

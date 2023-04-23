@@ -1,0 +1,20 @@
+.HeaderThemeToggler {
+  @include flexCenter(row);
+  width: fit-content;
+  margin: 0rem 0.625rem;
+  padding: 0.313rem 0.875rem;
+  color: $dark-text-primary;
+  background-color: $primary-light;
+  cursor: pointer;
+
+  &.dark {
+    color: $light-text-primary;
+    background-color: $primary-dark;
+  }
+
+  p {
+    font-size: $fontsize-small1;
+    font-weight: 400;
+    margin-right: 0.5rem;
+  }
+}

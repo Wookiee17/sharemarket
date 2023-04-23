@@ -1,0 +1,113 @@
+.TopTabs_item {
+  width: fit-content;
+  // height: 1.875rem;
+  // padding: 0 0.5rem;
+  // text-align: center;
+  // cursor: pointer;
+  @include flexCenter(row);
+  font-size: $fontsize-default;
+  font-weight: 400;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: $border-width-general;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+
+  &.dark {
+    background-color: $secondary-dark;
+    color: $light-text-primary;
+  }
+
+  &.light {
+    background-color: $primary-light;
+    color: $blue-300;
+  }
+
+  &.focused {
+    background-color: $blue-300 !important;
+    border: 0.5px solid $blue-300 !important;
+    box-shadow: $shadow-general;
+    position: relative;
+    color: $light-text-primary !important;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: $blue-300;
+      position: absolute;
+      bottom: -0.313rem;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+    }
+  }
+
+  &.light {
+    &:hover {
+      background-color: $yellow-trans;
+      border: 0.5px solid $yellow-100;
+      box-shadow: $shadow-general;
+      color: $dark-text-primary;
+    }
+  }
+
+  &.dark {
+    &:hover {
+      background-color: $yellow-trans;
+      border: 0.5px solid $yellow-100;
+      box-shadow: $shadow-general;
+      color: $light-text-primary;
+    }
+  }
+
+  &-close {
+    @include flexCenter(row);
+    margin-right: 0.313rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $yellow-100;
+    }
+
+    svg {
+      font-size: $fontsize-large1;
+    }
+  }
+
+  &-link {
+    height: 1.875rem;
+    padding: 0 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    @include flexCenter(row);
+    font-size: $fontsize-default;
+    font-weight: 400;
+    color: $light-text-primary;
+
+    &:hover {
+      color: $light-text-primary;
+    }
+  }
+
+  .badge {
+    font-size: $fontsize-small2;
+    font-weight: 600;
+    padding: 0 0.188rem;
+    background-color: $yellow-200;
+    text-transform: uppercase;
+    margin-left: 0.25rem;
+    margin-bottom: 0.5rem;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+  }
+}

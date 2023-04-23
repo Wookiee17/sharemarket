@@ -1,0 +1,114 @@
+.DropDown {
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+
+  &_top {
+    @include flexCenter(row);
+    justify-content: space-between;
+    padding: 0.25rem 0.438rem;
+    min-width: 7.5rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    &.border {
+      border: $border-width-general;
+      background-color: $secondary-dark;
+    }
+
+    &.light {
+      color: $dark-text-primary;
+      // background-color: $primary-light;
+      // border: $border-width-type1;
+    }
+
+    &.dark {
+      color: $light-text-primary;
+      // background-color: $primary-dark;
+      // border: $border-width-type2;
+    }
+
+    &_img {
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: cover;
+      background-color: $primary-light;
+      border: $border-width-general;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+
+    p {
+      margin: 0rem 0.438rem;
+      font-size: $fontsize-default;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &_menu {
+    width: 100%;
+    padding: 0rem 0.438rem;
+    background-color: $secondary-light;
+    box-shadow: $shadow-general;
+    border: $border-width-general;
+    position: absolute;
+    z-index: 99;
+    max-height: 7.5rem;
+    overflow-y: hidden;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+
+    &.dark {
+      background-color: $quaternary-dark;
+      border: $border-width-general;
+    }
+
+    &-item {
+      border-bottom: $border-width-general;
+      padding: 0.625rem 0rem;
+      font-size: $fontsize-default;
+      color: $dark-text-primary;
+      letter-spacing: 0.05em;
+
+      &.dark {
+        border-bottom: $border-width-general;
+        color: $light-text-primary;
+      }
+    }
+  }
+}

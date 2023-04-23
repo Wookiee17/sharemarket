@@ -1,0 +1,72 @@
+.tab_add_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  @include flexCenter(row);
+
+  &.light {
+    background-color: $table-header;
+  }
+
+  &.dark {
+    background-color: $table-header;
+  }
+
+  &-body {
+    width: 18.75rem;
+    padding: 0.625rem 1.25rem;
+    background-color: $primary-light;
+    color: $dark-text-primary;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    &.dark {
+      background-color: $primary-dark;
+      color: $light-text-primary;
+
+      h5 {
+        color: $light-text-primary;
+      }
+
+      input {
+        background-color: $primary-dark;
+        border: $border-width-general;
+
+        &::placeholder {
+          color: $light-text-muted;
+        }
+      }
+    }
+
+    h5 {
+      font-size: $fontsize-large1;
+      font-weight: normal;
+      margin-bottom: 0.438rem;
+    }
+
+    input {
+      width: 100%;
+      height: 1.563rem;
+      background-color: $primary-light;
+      border: $border-width-general;
+      border-radius: 4px;
+      outline: none !important;
+      padding: 0.313rem;
+      font-size: $fontsize-small1;
+      margin-bottom: 0.875em;
+
+      &::placeholder {
+        color: $dark-text-muted;
+      }
+    }
+
+    &_btnGrp {
+      @include flexCenter(row);
+    }
+  }
+}

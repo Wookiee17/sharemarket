@@ -1,0 +1,50 @@
+.FutureActivity {
+  padding: 0rem 0.313rem;
+  padding-top: 0.938rem;
+  height: 100%;
+  // background-color: aqua;
+
+  &_maximizeList {
+    @include flexStartRow();
+    padding: 0px 5px 0px;
+    &-item {
+      width: 23%;
+      margin: 0px 10px 0px;
+      padding: 10px;
+      border: $border-width-type6;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      &:hover {
+        box-shadow: $shadow-dark-highlight;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.FutureActivityChart {
+  width: 100%;
+  height: 100%;
+}
+
+.FutureActivityChart_chart {
+  max-width: 96%;
+  height: calc(100% - 55px);
+  margin: 0.438rem auto 0;
+
+  &.full {
+    height: 400px;
+    overflow-y: auto;
+  }
+}

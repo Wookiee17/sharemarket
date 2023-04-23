@@ -1,0 +1,97 @@
+.DropDownMenu {
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+
+  &_top {
+    @include flexCenter(row);
+    padding: 0.438rem;
+    color: $dark-text-primary;
+    // background-color: $primary-light;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    &.dark {
+      color: $light-text-primary;
+      // background-color: $primary-dark;
+    }
+
+    &_img {
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: cover;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      background-color: $primary-light;
+      border: $border-width-general;
+    }
+
+    p {
+      margin: 0rem 0.7rem;
+      font-size: $fontsize-large1;
+      font-weight: 400;
+    }
+  }
+
+  &_menu {
+    width: 100%;
+    padding: 0rem 0.438rem;
+    background-color: $tertiary-light;
+    box-shadow: $shadow-general;
+    border-radius: 1px;
+    border: $border-width-general;
+    position: absolute;
+    z-index: 99;
+    max-height: 7.5rem;
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: auto;
+
+      @supports (overflow-y: overlay) {
+        overflow-y: overlay;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(193, 193, 193, 0.8);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(193, 193, 193, 0.8);
+    }
+
+    &.dark {
+      background-color: $quaternary-dark;
+      border: $border-width-general;
+    }
+
+    &-item {
+      border-bottom: $border-width-general;
+      padding: 0.625rem 0rem;
+      font-size: $fontsize-small1;
+      color: $dark-text-primary;
+      letter-spacing: 0.05em;
+
+      &.dark {
+        border-bottom: $border-width-general;
+        color: $light-text-primary;
+      }
+    }
+  }
+}

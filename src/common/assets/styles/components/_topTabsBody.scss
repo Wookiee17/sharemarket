@@ -1,0 +1,40 @@
+// top tabs body to different tab sections
+.tabs-body {
+  height: calc(100vh - 116px);
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: hidden;
+
+    @supports (overflow-y: overlay) {
+      overflow-y: hidden;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(193, 193, 193, 0.8);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(193, 193, 193, 0.8);
+  }
+
+  // theme light
+  &.light {
+    background-color: $secondary-light;
+  }
+
+  &.dark {
+    background-color: $primary-dark;
+  }
+}

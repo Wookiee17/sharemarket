@@ -1,0 +1,38 @@
+.list-box {
+  .header {
+    background-color: $dark-top-tab-bg;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    // height: 1px;
+    gap: 0.5rem;
+    padding: 3px 0 3px 2px;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition-duration: 0.4s;
+      &.down {
+        rotate: 90deg;
+      }
+    }
+    p {
+      color: $light-text-primary;
+      opacity: 60%;
+    }
+  }
+  main {
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: $border-width-type6;
+        span {
+          margin-left: 0.5rem;
+          color: $dark-text-secondary;
+        }
+      }
+    }
+  }
+}

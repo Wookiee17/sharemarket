@@ -1,0 +1,152 @@
+.decline {
+  .ant-carousel .slick-dots li.slick-active button {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+  .ant-carousel .slick-dots li button {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+  &-slider {
+    width: 100%;
+    // height: 31vh;
+
+    &_item {
+      // height: 30vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  &-tabs {
+    width: 250px;
+    margin: 10px auto 0;
+  }
+}
+
+.decline-list {
+  @include flexStartRow();
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 60px;
+  padding-right: 60px;
+
+  &_item {
+    width: 21.5%;
+    margin: 20px 20px;
+    border: $border-width-type6;
+    border-radius: 5px;
+
+    &:hover {
+      box-shadow: $shadow-dark-highlight;
+    }
+  }
+}
+
+.decline_item {
+  margin: 0.438rem;
+  padding: 0.438rem;
+  background-color: $primary-light;
+  color: $dark-text-primary;
+
+  &.dark {
+    background-color: $secondary-dark;
+    color: $light-text-primary;
+  }
+
+  &-top {
+    @include flexStartRow();
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+
+    .name {
+      font-size: $fontsize-large1;
+      font-weight: 700;
+
+      &.sm {
+        font-size: $fontsize-default;
+        font-weight: 700;
+      }
+    }
+
+    a,
+    small {
+      font-size: $fontsize-default;
+      font-weight: 400;
+      color: $blue-200;
+      cursor: pointer;
+    }
+  }
+
+  &-middle {
+    @include flexStartRow();
+    justify-content: space-between;
+
+    &-box {
+      &-top {
+        font-size: $fontsize-large2;
+        font-weight: 500;
+        line-height: $fontsize-large3;
+
+        &.advances {
+          svg {
+            color: $green-300;
+          }
+        }
+        &.declines {
+          svg {
+            color: $red-300;
+          }
+        }
+
+        &.nutral {
+          text-align: center;
+        }
+      }
+      &-bottom {
+        font-size: $fontsize-default;
+        font-weight: 300;
+        line-height: 14px;
+        text-transform: capitalize;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &-bar {
+    overflow: hidden;
+    width: 100%;
+    height: 1px;
+    // background-color: $quinary-light;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    @include flexStartRow();
+
+    &_advances {
+      background-color: $green-300;
+      height: 1px;
+    }
+
+    &.nutral {
+      background-color: $quinary-light;
+      height: 1px;
+    }
+
+    &_declines {
+      background-color: $red-300;
+      height: 1px;
+    }
+  }
+
+  &-timeStamp {
+    font-size: $fontsize-small1;
+    font-weight: 400;
+    line-height: 12px;
+    text-transform: capitalize;
+    color: $senary-dark;
+  }
+}
